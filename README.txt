@@ -9,3 +9,8 @@ GitHub Pages 圖片修正版：
 - 已修正 assets/ayutthaya.svg 的 XML 字元。
 - 已加入 .nojekyll。
 - 更新後若仍看到舊圖片，請用 Ctrl+F5，或清除該網站資料後重開。
+
+PNG 圖片修正版：
+- Day 1 與 Day 2 共用的 ayutthaya 視覺卡已由 SVG 改成 PNG。
+- 其他大圖也改為 PNG，避免瀏覽器 SVG 解析與舊快取問題。
+- GitHub 更新後請執行 Ctrl+F5，或清除網站資料。

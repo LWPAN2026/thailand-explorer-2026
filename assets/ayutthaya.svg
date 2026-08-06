@@ -4,5 +4,5 @@
     <rect width="1200" height="630" rx="42" fill="url(#g)"/><rect width="1200" height="630" fill="url(#p)"/>
     <circle cx="1040" cy="110" r="150" fill="white" opacity=".10"/><circle cx="1030" cy="520" r="230" fill="white" opacity=".08"/>
     <text x="72" y="360" font-family="Arial,sans-serif" font-size="92" font-weight="700" fill="white">AYUTTHAYA</text>
-    <text x="78" y="430" font-family="Arial,sans-serif" font-size="34" fill="white" opacity=".9">Ancient brick temples & river light</text>
+    <text x="78" y="430" font-family="Arial,sans-serif" font-size="34" fill="white" opacity=".9">Ancient brick temples &amp; river light</text>
     </svg>
