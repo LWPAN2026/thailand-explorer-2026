@@ -4,3 +4,8 @@ Thailand Explorer 2026 完整版
 3. 可部署到 GitHub Pages、Netlify 或任何靜態網站空間。
 4. Google Maps、即時營業資訊與泰文語音需要網路。
 5. 收藏與勾選狀態儲存在同一瀏覽器的 localStorage。
+
+GitHub Pages 圖片修正版：
+- 已修正 assets/ayutthaya.svg 的 XML 字元。
+- 已加入 .nojekyll。
+- 更新後若仍看到舊圖片，請用 Ctrl+F5，或清除該網站資料後重開。
