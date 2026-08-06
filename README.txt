@@ -14,3 +14,9 @@ PNG 圖片修正版：
 - Day 1 與 Day 2 共用的 ayutthaya 視覺卡已由 SVG 改成 PNG。
 - 其他大圖也改為 PNG，避免瀏覽器 SVG 解析與舊快取問題。
 - GitHub 更新後請執行 Ctrl+F5，或清除網站資料。
+
+V2 Ultimate：
+- 保留移除每日預算與泰文常用會話的要求。
+- 新增倒數、首頁功能入口、真實景點照片、BTS 路線卡、雨天備案與拍照攻略。
+- 圖片使用 Wikimedia Commons 授權素材，詳細署名列在網站底部。
+- 更新 GitHub 後建議清除舊網站快取或 Ctrl+F5。

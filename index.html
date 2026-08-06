@@ -26,24 +26,56 @@ details{background:var(--card);border:1px solid var(--line);border-radius:16px;m
 footer{text-align:center;color:var(--muted);padding:30px}
 @media(min-width:700px){.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:repeat(3,1fr)}.budget-grid{grid-template-columns:1fr 1fr}.hero{padding-top:34px}.hero-img{aspect-ratio:16/6}}
 @media(max-width:420px){.em-grid{grid-template-columns:1fr}.day-title h2{font-size:25px}}
+
+.countdown-card{margin-top:18px;padding:14px 16px;border:1px solid rgba(255,255,255,.25);border-radius:17px;background:rgba(255,255,255,.12);display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.countdown-card strong{font-size:26px}.countdown-card small{width:100%;opacity:.78}
+.app-menu{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:0 0 16px}
+.app-menu a,.app-menu button{min-width:0;border:1px solid var(--line);border-radius:18px;background:var(--card);color:var(--text);text-decoration:none;padding:13px 7px;text-align:center;box-shadow:var(--shadow)}
+.app-menu b{display:block;font-size:25px}.app-menu span{display:block;font-size:12px;margin-top:3px}
+.smart-tips{display:grid;grid-template-columns:1fr;gap:10px;margin:11px 0}
+.smart-tips>div,.transit-card{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:14px;box-shadow:var(--shadow)}
+.smart-tips p,.transit-card p{margin:5px 0 0;color:var(--muted)}
+.station-flow{display:flex;align-items:center;gap:7px;overflow:auto;padding:10px 0}.station-flow span{min-width:100px;text-align:center;padding:10px;border-radius:13px;background:var(--bg);border:1px solid var(--line);font-weight:800}.station-flow i{font-style:normal;color:var(--brand);font-weight:900}.station-flow small{color:var(--muted)}
+.live-note{border-left:5px solid var(--brand2)}
+@media(min-width:700px){.smart-tips{grid-template-columns:1fr 1fr}.app-menu{grid-template-columns:repeat(8,1fr)}}
+@media(max-width:480px){.app-menu{grid-template-columns:repeat(4,1fr)}}
 </style></head><body>
 <header class="hero"><div class="hero-inner"><img class="hero-img" src="assets/hero.png" alt="Thailand Explorer">
 <div class="hero-copy"><span class="pill">2026/09/18–09/24</span><span class="pill">7天6夜</span><span class="pill">完整版</span>
 <h1>Thailand<br>Explorer 2026</h1><p>曼谷機場 → 大城 → 羅勇本島 → 曼谷</p>
-<p>9/18 12:00 抵達｜9/24 17:50 起飛</p></div></div></header>
+<p>9/18 12:00 抵達｜9/24 17:50 起飛</p></div>
+<div class="countdown-card">
+  <span>距離出發</span>
+  <strong id="countdown">計算中…</strong>
+  <small>2026/09/18 由台北時區計算</small>
+</div>
+</div></header>
 
 <div class="sticky"><nav class="nav">
 <a href="#day1">9/18</a><a href="#day2">9/19</a><a href="#day3">9/20</a><a href="#day4">9/21</a><a href="#day5">9/22</a><a href="#day6">9/23</a><a href="#day7">9/24</a>
-<a href="#favorites">收藏</a><a href="#weather">天氣</a><a href="#budget">預算</a><a href="#shopping">購物</a><a href="#food">美食</a><a href="#phrases">泰文</a><a href="#emergency">緊急</a><a href="#packing">行李</a>
+<a href="#favorites">收藏</a><a href="#weather">天氣</a><a href="#shopping">購物</a><a href="#food">美食</a><a href="#emergency">緊急</a><a href="#packing">行李</a>
 <button onclick="toggleDark()">深色模式</button>
 </nav></div>
 <main>
-<section class="notice"><strong>本版已補齊：</strong>大圖卡片、收藏、PWA 離線、深色模式、Google Maps、BTS／MRT、包車泰文、天氣穿搭、每日預算、購物、美食、泰文會話、每日清單、緊急電話與行李清單。</section>
+<section class="app-menu" id="appMenu">
+<a href="#day1"><b>📅</b><span>每日行程</span></a>
+<a href="#favorites"><b>❤️</b><span>我的收藏</span></a>
+<a href="#food"><b>🍜</b><span>必吃美食</span></a>
+<a href="#shopping"><b>🛍️</b><span>必買清單</span></a>
+<a href="#weather"><b>🌧️</b><span>雨季提醒</span></a>
+<a href="#emergency"><b>⚠️</b><span>緊急資訊</span></a>
+<a href="#packing"><b>🎒</b><span>行李清單</span></a>
+<button onclick="toggleDark()"><b>🌙</b><span>深色模式</span></button>
+</section>
+
+<section class="notice live-note"><strong>營業時間／評分：</strong>餐廳評分與營業時間會變動，因此網站不鎖死容易過期的數字；每張卡片請按 Google Maps 查看出發當日的即時評分、休息日與營業狀態。</section>
+
+<section class="notice"><strong>本版已補齊：</strong>大圖卡片、收藏、PWA 離線、深色模式、Google Maps、BTS／MRT、包車泰文、天氣穿搭、購物、美食、每日清單、緊急電話與行李清單。</section>
 
 <section class="notice"><strong>使用方式：</strong>點每張卡片的 Google Maps 按鈕即可開啟地圖；「開啟今日導航」會帶入當日順序。曼谷不排寺廟、不安排按摩，並以 BTS／MRT 為主。9/18–9/21 包車，9/24 單獨送機。</section>
 
-<section class="day" id="day1"><img class="cover" src="assets/ayutthaya.png" alt="day1 visual card" loading="lazy">
-<div class="day-title"><span class="eyebrow">Day 1｜9/18（五）｜包車</span><h2>素萬那普機場 → 大城古城</h2><p class="summary">12:00 抵達後直接前往大城。第一天只保留兩個核心古蹟，避免入境或塞車造成壓力。</p></div>
+<section class="day" id="day1"><img class="cover" src="assets/wat-mahathat-real.jpg" alt="day1 visual card" loading="lazy">
+<div class="day-title"><span class="eyebrow">Day 1｜9/18（五）｜包車</span><h2>素萬那普機場 → 大城古城</h2><p class="summary">12:00 抵達後直接前往大城。第一天只保留兩個核心古蹟，避免入境或塞車造成壓力。</p></div><div class="smart-tips"><div><b>🌧️ 雨天備案</b><p>雨天：機場延誤或大雨時只保留柴瓦塔那蘭寺；若古蹟關閉，直接入住並隔天早上補瑪哈泰寺。</p></div><div><b>📸 拍照攻略</b><p>拍照：樹根佛頭請蹲低；柴瓦塔那蘭寺先拍中軸全景，再拍紅磚塔與夕陽側光。</p></div></div>
 <a class="btn route" href="https://www.google.com/maps/dir/?api=1&origin=Suvarnabhumi+Airport&destination=sala+ayutthaya&waypoints=Wat+Mahathat+Ayutthaya%7CWat+Chaiwatthanaram" target="_blank" rel="noopener">開啟今日導航｜機場到大城</a>
 <div class="timeline"><h3>建議時間</h3><ol><li>12:00 抵達素萬那普機場</li><li>13:15–13:45 完成入境、領行李並與司機會合</li><li>15:15 左右抵達大城，先簡單用餐或買點心</li><li>15:45–16:45 瑪哈泰寺</li><li>17:00–18:15 柴瓦塔那蘭寺</li><li>18:45 河景晚餐，之後入住</li></ol></div>
 
@@ -98,8 +130,8 @@ footer{text-align:center;color:var(--muted);padding:30px}
 ส่งที่โรงแรม sala ayutthaya
 ขอเที่ยวแบบสบาย ๆ ไม่เร่งรีบ</pre><button class="copy" onclick="copyText('thai1',this)">複製泰文</button></div>
 </section>
-<section class="day" id="day2"><img class="cover" src="assets/ayutthaya.png" alt="day2 visual card" loading="lazy">
-<div class="day-title"><span class="eyebrow">Day 2｜9/19（六）｜包車</span><h2>大城皇家遺址 → 羅勇老街</h2><p class="summary">上午完成大城代表景點，午餐後長途前往羅勇。傍晚老街以散步與地方菜為主，不再排大量景點。</p></div>
+<section class="day" id="day2"><img class="cover" src="assets/wat-chaiwatthanaram-real.jpg" alt="day2 visual card" loading="lazy">
+<div class="day-title"><span class="eyebrow">Day 2｜9/19（六）｜包車</span><h2>大城皇家遺址 → 羅勇老街</h2><p class="summary">上午完成大城代表景點，午餐後長途前往羅勇。傍晚老街以散步與地方菜為主，不再排大量景點。</p></div><div class="smart-tips"><div><b>🌧️ 雨天備案</b><p>雨天：帕席桑碧寺與柴蒙空寺縮短停留，蒙空博碧寺作室內緩衝；仍應在 13:30 前離開大城。</p></div><div><b>📸 拍照攻略</b><p>拍照：三座佛塔用廣角；柴蒙空寺佛像長廊用縱深構圖，階梯上注意人流。</p></div></div>
 <a class="btn route" href="https://www.google.com/maps/dir/?api=1&origin=sala+ayutthaya&destination=Kantary+Bay+Hotel+Rayong&waypoints=Wat+Phra+Si+Sanphet%7CWihan+Phra+Mongkhon+Bophit%7CWat+Yai+Chai+Mongkhon" target="_blank" rel="noopener">開啟今日導航｜大城到羅勇</a>
 <div class="timeline"><h3>建議時間</h3><ol><li>08:30 退房出發</li><li>09:00 帕席桑碧寺</li><li>10:00 蒙空博碧寺</li><li>10:40 柴蒙空寺</li><li>12:00 船麵午餐</li><li>13:00–13:30 出發前往羅勇，中途休息一次</li><li>17:30 左右入住；視交通與營業狀況逛 Yomjinda 老街</li></ol></div>
 
@@ -187,8 +219,8 @@ footer{text-align:center;color:var(--muted);padding:30px}
 ส่งสัมภาระที่ Kantary Bay Hotel Rayong
 ถ้าเวลาและร้านค้ายังเปิด ขอไปถนนยมจินดาช่วงเย็น</pre><button class="copy" onclick="copyText('thai2',this)">複製泰文</button></div>
 </section>
-<section class="day" id="day3"><img class="cover" src="assets/rayong.png" alt="day3 visual card" loading="lazy">
-<div class="day-title"><span class="eyebrow">Day 3｜9/20（日）｜包車</span><h2>羅勇本島自然生態日</h2><p class="summary">不去沙美島，改以海角國家公園、漁港市場、濕地與松林海岸串成一整天。這是本次自然主題最完整的一天。</p></div>
+<section class="day" id="day3"><img class="cover" src="assets/khao-laem-ya-real.jpg" alt="day3 visual card" loading="lazy">
+<div class="day-title"><span class="eyebrow">Day 3｜9/20（日）｜包車</span><h2>羅勇本島自然生態日</h2><p class="summary">不去沙美島，改以海角國家公園、漁港市場、濕地與松林海岸串成一整天。這是本次自然主題最完整的一天。</p></div><div class="smart-tips"><div><b>🌧️ 雨天備案</b><p>雨天：取消岩岸、松林海灘與遠程紅樹林，改班佩市場、羅勇水族館、咖啡館與早回飯店。</p></div><div><b>📸 拍照攻略</b><p>拍照：國家公園以海天線、岩岸和步道為主；紅樹林用低角度拍根系，避免踩入泥灘。</p></div></div>
 <a class="btn route" href="https://www.google.com/maps/dir/?api=1&origin=Kantary+Bay+Hotel+Rayong&destination=Kantary+Bay+Hotel+Rayong&waypoints=Khao+Laem+Ya+Mu+Ko+Samet+National+Park%7CBan+Phe+Fresh+Market%7CTung+Prong+Thong+Rayong%7CSuan+Son+Beach+Rayong" target="_blank" rel="noopener">開啟今日導航｜羅勇自然線</a>
 <div class="notice"><strong>重要調整：</strong>先前泛稱的「Rayong Mangrove Forest」定位不夠精確。本版改以 Google Maps 較容易定位的 <strong>Tung Prong Thong（金色紅樹林）</strong>作為生態點；但它位在羅勇較東側，會增加車程。若你不想拉車，請司機改找靠市區的 Phra Chedi Klang Nam 紅樹林步道，並刪除松林海灘或縮短停留。</div>
 <div class="timeline"><h3>推薦時間</h3><ol><li>08:30 早餐，09:00 出發</li><li>09:40–11:20 考蘭雅國家公園</li><li>11:35–12:10 班佩市場</li><li>12:15–13:30 班佩海鮮午餐</li><li>依體力二選一：近程紅樹林／遠程 Tung Prong Thong</li><li>16:15–17:30 松林海灘；若選遠程紅樹林則視時間取消</li><li>19:00 回市區晚餐</li></ol></div>
@@ -269,7 +301,7 @@ footer{text-align:center;color:var(--muted);padding:30px}
 ขอเที่ยวแบบสบาย ๆ เน้นธรรมชาติและไม่เร่งรีบ</pre><button class="copy" onclick="copyText('thai3',this)">複製泰文</button></div>
 </section>
 <section class="day" id="day4"><img class="cover" src="assets/bangkok.png" alt="day4 visual card" loading="lazy">
-<div class="day-title"><span class="eyebrow">Day 4｜9/21（一）｜包車至曼谷</span><h2>羅勇慢早晨 → 曼谷河岸夜景</h2><p class="summary">上午保留飯店與海邊時間，中午回曼谷。抵達後包車結束，晚上以 BTS＋Gold Line 前往 ICONSIAM。</p></div>
+<div class="day-title"><span class="eyebrow">Day 4｜9/21（一）｜包車至曼谷</span><h2>羅勇慢早晨 → 曼谷河岸夜景</h2><p class="summary">上午保留飯店與海邊時間，中午回曼谷。抵達後包車結束，晚上以 BTS＋Gold Line 前往 ICONSIAM。</p></div><div class="smart-tips"><div><b>🌧️ 雨天備案</b><p>雨天：上午留在飯店；抵達曼谷後 ICONSIAM 全室內，不受影響。</p></div><div><b>📸 拍照攻略</b><p>拍照：ICONSIAM 河岸平台拍夜景；手機開夜景模式並靠欄杆穩定。</p></div></div>
 <a class="btn route" href="https://www.google.com/maps/dir/?api=1&origin=Kantary+Bay+Hotel+Rayong&destination=Eastin+Grand+Hotel+Phayathai" target="_blank" rel="noopener">開啟今日導航｜羅勇到曼谷飯店</a>
 <div class="timeline"><h3>建議時間</h3><ol><li>08:00–10:00 早餐、泳池或海邊散步</li><li>10:30 退房；不再安排遠程景點</li><li>11:00–12:00 羅勇最後午餐</li><li>12:15 出發，預留曼谷塞車</li><li>16:00–17:00 入住 Eastin Grand Hotel Phayathai，包車結束</li><li>18:00 後搭 BTS 前往 ICONSIAM</li></ol></div>
 <div class="grid two">
@@ -335,9 +367,14 @@ footer{text-align:center;color:var(--muted);padding:30px}
 วันนี้เป็นวันสุดท้ายของรถเหมาพร้อมคนขับ</pre><button class="copy" onclick="copyText('thai4',this)">複製泰文</button></div>
 </section>
 <section class="day" id="day5"><img class="cover" src="assets/bangkok.png" alt="day5 visual card" loading="lazy">
-<div class="day-title"><span class="eyebrow">Day 5｜9/22（二）｜BTS 自由行</span><h2>Ari 生活街區 → Phrom Phong 綠地與商場</h2><p class="summary">全日依 BTS Sukhumvit Line 移動，不搭 Grab、不排寺廟。上午看曼谷生活感，下午進入商場與城市綠地，雨天也容易調整。</p></div>
+<div class="day-title"><span class="eyebrow">Day 5｜9/22（二）｜BTS 自由行</span><h2>Ari 生活街區 → Phrom Phong 綠地與商場</h2><p class="summary">全日依 BTS Sukhumvit Line 移動，不搭 Grab、不排寺廟。上午看曼谷生活感，下午進入商場與城市綠地，雨天也容易調整。</p></div><div class="smart-tips"><div><b>🌧️ 雨天備案</b><p>雨天：Ari 只保留咖啡與午餐，下午全部移至 EmQuartier、Emporium、Emsphere。</p></div><div><b>📸 拍照攻略</b><p>拍照：Ari 拍巷弄與店面細節；Benchasiri Park 在傍晚拍城市綠地與高樓。</p></div></div>
 <a class="btn route" href="https://www.google.com/maps/dir/?api=1&origin=Eastin+Grand+Hotel+Phayathai&destination=Benchasiri+Park&waypoints=Ari+BTS+Station%7CNANA+Coffee+Roasters+Ari%7CLay+Lao+Ari%7CEMSPHERE" target="_blank" rel="noopener">開啟今日導航｜BTS 路線參考</a>
-<div class="timeline"><h3>捷運與時間</h3><ol><li>09:00 BTS Phaya Thai → Ari，約 2 站</li><li>09:20–11:00 Ari 巷弄與咖啡</li><li>11:30–12:45 Ari 午餐</li><li>13:15 BTS Ari → Phrom Phong，途中不必換線</li><li>14:00–17:30 EmQuartier／Emporium／Emsphere 與 Benchasiri Park</li><li>18:00 晚餐後搭 BTS 返回</li></ol></div>
+
+<div class="transit-card">
+<h3>🚆 Day 5 BTS 路線</h3>
+<div class="station-flow"><span>Phaya Thai<br><small>N2</small></span><i>→</i><span>Ari<br><small>N5</small></span><i>→</i><span>Phrom Phong<br><small>E5</small></span><i>→</i><span>Phaya Thai</span></div>
+<p>全程 Sukhumvit Line；Ari 到 Phrom Phong 不需換線。</p>
+</div><div class="timeline"><h3>捷運與時間</h3><ol><li>09:00 BTS Phaya Thai → Ari，約 2 站</li><li>09:20–11:00 Ari 巷弄與咖啡</li><li>11:30–12:45 Ari 午餐</li><li>13:15 BTS Ari → Phrom Phong，途中不必換線</li><li>14:00–17:30 EmQuartier／Emporium／Emsphere 與 Benchasiri Park</li><li>18:00 晚餐後搭 BTS 返回</li></ol></div>
 
     <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
       <div class="place-head">
@@ -417,9 +454,14 @@ footer{text-align:center;color:var(--muted);padding:30px}
 </div>
 </section>
 <section class="day" id="day6"><img class="cover" src="assets/bangkok.png" alt="day6 visual card" loading="lazy">
-<div class="day-title"><span class="eyebrow">Day 6｜9/23（三）｜BTS＋MRT</span><h2>Siam 購物 → CentralWorld／Big C → Asok 晚餐</h2><p class="summary">最後一個完整日以採買為主。上午 Siam、下午 Chit Lom／Ratchaprasong，傍晚若體力足夠再去 Asok；不想移動可直接留在 CentralWorld 吃晚餐。</p></div>
+<div class="day-title"><span class="eyebrow">Day 6｜9/23（三）｜BTS＋MRT</span><h2>Siam 購物 → CentralWorld／Big C → Asok 晚餐</h2><p class="summary">最後一個完整日以採買為主。上午 Siam、下午 Chit Lom／Ratchaprasong，傍晚若體力足夠再去 Asok；不想移動可直接留在 CentralWorld 吃晚餐。</p></div><div class="smart-tips"><div><b>🌧️ 雨天備案</b><p>雨天：全程使用 Siam 與 Ratchaprasong 空橋、商場通道；Big C 買完直接回飯店。</p></div><div><b>📸 拍照攻略</b><p>拍照：Siam Square 拍街頭招牌與人流；CentralWorld 外廣場適合傍晚城市照。</p></div></div>
 <a class="btn route" href="https://www.google.com/maps/dir/?api=1&origin=Eastin+Grand+Hotel+Phayathai&destination=Terminal+21+Asok&waypoints=Siam+Paragon%7CSiam+Square%7CCentralWorld%7CBig+C+Supercenter+Ratchadamri" target="_blank" rel="noopener">開啟今日導航｜曼谷購物線</a>
-<div class="timeline"><h3>捷運與時間</h3><ol><li>09:30 BTS Phaya Thai → Siam</li><li>09:45–13:30 Siam Paragon、Siam Center、Siam Square</li><li>13:30 午餐</li><li>15:00 步行或搭一站 BTS 到 Chit Lom，逛 CentralWorld</li><li>17:00 Big C Ratchadamri 買伴手禮</li><li>18:30 二選一：CentralWorld 晚餐，或 BTS 到 Asok／MRT Sukhumvit</li></ol></div>
+
+<div class="transit-card">
+<h3>🚆 Day 6 BTS 路線</h3>
+<div class="station-flow"><span>Phaya Thai<br><small>N2</small></span><i>→</i><span>Siam<br><small>CEN</small></span><i>→</i><span>Chit Lom<br><small>E1</small></span><i>→</i><span>Asok<br><small>E4，可選</small></span></div>
+<p>Siam 至 CentralWorld 可搭一站 BTS 或走空中步道；買很多東西時不要硬繞 Asok。</p>
+</div><div class="timeline"><h3>捷運與時間</h3><ol><li>09:30 BTS Phaya Thai → Siam</li><li>09:45–13:30 Siam Paragon、Siam Center、Siam Square</li><li>13:30 午餐</li><li>15:00 步行或搭一站 BTS 到 Chit Lom，逛 CentralWorld</li><li>17:00 Big C Ratchadamri 買伴手禮</li><li>18:30 二選一：CentralWorld 晚餐，或 BTS 到 Asok／MRT Sukhumvit</li></ol></div>
 
     <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
       <div class="place-head">
@@ -499,7 +541,7 @@ footer{text-align:center;color:var(--muted);padding:30px}
 </div>
 </section>
 <section class="day" id="day7"><img class="cover" src="assets/tools.png" alt="day7 visual card" loading="lazy">
-<div class="day-title"><span class="eyebrow">Day 7｜9/24（四）｜17:50 起飛</span><h2>Phaya Thai 輕鬆上午 → 素萬那普機場</h2><p class="summary">不再排跨區景點。中午前退房、附近吃飯，13:15–13:30 搭預約接送或 Airport Rail Link 前往機場。</p></div>
+<div class="day-title"><span class="eyebrow">Day 7｜9/24（四）｜17:50 起飛</span><h2>Phaya Thai 輕鬆上午 → 素萬那普機場</h2><p class="summary">不再排跨區景點。中午前退房、附近吃飯，13:15–13:30 搭預約接送或 Airport Rail Link 前往機場。</p></div><div class="smart-tips"><div><b>🌧️ 雨天備案</b><p>雨天：不影響；直接在飯店用餐並提早前往機場。</p></div><div><b>📸 拍照攻略</b><p>拍照：最後一天不追景點，把時間留給行李、退稅與準時抵達機場。</p></div></div>
 <a class="btn route" href="https://www.google.com/maps/dir/?api=1&origin=Eastin+Grand+Hotel+Phayathai&destination=Suvarnabhumi+Airport" target="_blank" rel="noopener">開啟今日導航｜飯店到機場</a>
 <div class="timeline"><h3>建議時間</h3><ol><li>08:00–09:30 早餐</li><li>09:30–10:45 飯店附近咖啡或最後整理</li><li>11:00 退房，行李寄存</li><li>11:15–12:15 附近午餐</li><li>12:30 取行李</li><li>13:15–13:30 出發；目標 14:30–15:00 抵達機場</li><li>17:50 班機返台</li></ol></div>
 
@@ -583,20 +625,7 @@ footer{text-align:center;color:var(--muted);padding:30px}
 <p class="tip"><strong>行程原則：</strong>雷雨時不要走海角、礁岩或紅樹林濕滑步道；改去市場、咖啡館、商場或水族館。</p>
 </section>
 
-<section class="appendix" id="budget">
-<h2>每日預算估算</h2>
-<p class="small">以下為每人泰銖估算，未含國際機票、飯店房價與 9/18–9/21 私人包車報價；餐費依共享菜色與餐廳等級浮動。</p>
-<div class="budget-grid">
-<div class="budget"><b>9/18 大城</b><span>฿1,200–2,200</span><small>門票、點心、河景晚餐</small></div>
-<div class="budget"><b>9/19 大城→羅勇</b><span>฿800–1,600</span><small>門票、船麵、地方菜</small></div>
-<div class="budget"><b>9/20 羅勇自然</b><span>฿1,100–2,000</span><small>國家公園、海鮮、飲料</small></div>
-<div class="budget"><b>9/21 羅勇→曼谷</b><span>฿900–1,800</span><small>午餐、BTS、ICONSIAM</small></div>
-<div class="budget"><b>9/22 曼谷</b><span>฿700–1,500</span><small>BTS、咖啡、午晚餐</small></div>
-<div class="budget"><b>9/23 曼谷購物</b><span>฿800–1,800＋購物</span><small>BTS、餐飲；購物另計</small></div>
-<div class="budget"><b>9/24 回程</b><span>฿500–1,200</span><small>早餐／午餐與送機分攤</small></div>
-</div>
-<details><summary>包車詢價要確認哪些費用？</summary><p>請問報價是否已含燃油、過路費、停車費、司機住宿與餐費、每天可用時數、超時費，以及 9/24 送機是否另計。車型要依乘客與行李件數決定，不能只看座位數。</p></details>
-</section>
+
 
 <section class="appendix" id="shopping">
 <img class="cover" src="assets/shopping.png" alt="Shopping guide">
@@ -623,22 +652,7 @@ footer{text-align:center;color:var(--muted);padding:30px}
 </div>
 </section>
 
-<section class="appendix" id="phrases">
-<h2>泰文常用會話</h2>
-<div class="phrase-list">
-<button onclick="speakThai('สวัสดีค่ะ')"><b>你好</b><span>สวัสดีค่ะ／ครับ</span></button>
-<button onclick="speakThai('ขอบคุณค่ะ')"><b>謝謝</b><span>ขอบคุณค่ะ／ครับ</span></button>
-<button onclick="speakThai('ไม่เผ็ด')"><b>不要辣</b><span>ไม่เผ็ด</span></button>
-<button onclick="speakThai('เผ็ดน้อย')"><b>少辣</b><span>เผ็ดน้อย</span></button>
-<button onclick="speakThai('ไม่กินเนื้อวัว')"><b>不吃牛肉</b><span>ไม่กินเนื้อวัว</span></button>
-<button onclick="speakThai('แพ้อาหารทะเล')"><b>海鮮過敏</b><span>แพ้อาหารทะเล</span></button>
-<button onclick="speakThai('ราคาเท่าไหร่')"><b>多少錢？</b><span>ราคาเท่าไหร่</span></button>
-<button onclick="speakThai('ไปที่นี่ค่ะ')"><b>請去這裡</b><span>ไปที่นี่ค่ะ／ครับ</span></button>
-<button onclick="speakThai('จอดตรงนี้ได้ไหม')"><b>可以停這裡嗎？</b><span>จอดตรงนี้ได้ไหม</span></button>
-<button onclick="speakThai('ขอใบเสร็จด้วยค่ะ')"><b>請給收據</b><span>ขอใบเสร็จด้วยค่ะ／ครับ</span></button>
-</div>
-<p class="small">點選句子可嘗試用裝置的泰文語音朗讀；不同手機是否支援泰文語音取決於系統。</p>
-</section>
+
 
 <section class="appendix emergency" id="emergency">
 <h2>緊急聯絡資訊</h2>
@@ -697,6 +711,16 @@ footer{text-align:center;color:var(--muted);padding:30px}
 <ol><li>先在有網路時開啟一次這個網站，讓瀏覽器快取檔案。</li><li>iPhone Safari：分享 → 加入主畫面。Android Chrome：選單 → 加到主畫面／安裝應用程式。</li><li>行程、圖片、清單、收藏與泰文內容可離線開啟；Google Maps、即時營業狀況與語音朗讀仍需要網路或系統支援。</li></ol>
 <button id="installBtn" class="btn route" hidden>安裝到主畫面</button>
 </section>
+
+<section class="appendix" id="credits">
+<h2>📷 圖片來源與授權</h2>
+<ul>
+<li>Wat Mahathat 佛頭：Brian Chun（Funwithbchun），Wikimedia Commons，CC BY-SA 4.0；網站內裁切為 16:9。</li>
+<li>Wat Chaiwatthanaram：PlusMinus，Wikimedia Commons，CC BY-SA；網站內裁切為 16:9。</li>
+<li>Khao Laem Ya–Mu Ko Samet National Park：Manoonp，Wikimedia Commons，CC BY-SA 4.0；網站內裁切為 16:9。</li>
+<li>其餘章節圖卡為本行程手冊自製設計圖。</li>
+</ul>
+</section>
 </main><footer>Thailand Explorer 2026 Complete · 資料整理 2026-08-06</footer><script>
 function toggleDark(){document.body.classList.toggle('dark');localStorage.setItem('dark',document.body.classList.contains('dark'))}
 if(localStorage.getItem('dark')==='true')document.body.classList.add('dark');
@@ -713,4 +737,14 @@ syncFavButtons();renderFavs();
 if('serviceWorker'in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js'))}
 let deferredPrompt;const ib=document.getElementById('installBtn');window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;if(ib)ib.hidden=false});
 if(ib)ib.addEventListener('click',async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;ib.hidden=true});
+
+function updateCountdown(){
+ const target=new Date('2026-09-18T00:00:00+08:00');
+ const now=new Date(); const diff=target-now; const el=document.getElementById('countdown');
+ if(!el)return;
+ if(diff<=0){el.textContent='旅程已開始';return}
+ const days=Math.floor(diff/86400000), hrs=Math.floor((diff%86400000)/3600000);
+ el.textContent=days+' 天 '+hrs+' 小時';
+}
+updateCountdown();setInterval(updateCountdown,3600000);
 </script></body></html>
