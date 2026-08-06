@@ -1,4 +1,5 @@
-const CACHE='thailand-explorer-v5';const ASSETS=["./", "./index.html", "./manifest.webmanifest", "./assets/icon.svg", "./assets/hero.png", "./assets/ayutthaya.png", "./assets/rayong.png", "./assets/bangkok.png", "./assets/food.png", "./assets/shopping.png", "./assets/tools.png",'./assets/wat-mahathat-real.jpg','./assets/wat-chaiwatthanaram-real.jpg','./assets/khao-laem-ya-real.jpg'];
-self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS))));
-self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==CACHE).map(x=>caches.delete(x))))));
-self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request).then(resp=>{const cp=resp.clone();caches.open(CACHE).then(c=>c.put(e.request,cp));return resp}).catch(()=>caches.match('./index.html'))))});
+Thailand Explorer 2026 V2.1 Embedded
+- 所有頁面大圖已直接嵌入 index.html，不依賴 assets 圖片路徑。
+- 上傳 GitHub 時至少覆蓋 index.html、service-worker.js、manifest.webmanifest、.nojekyll。
+- 第一次開啟會自動刪除舊快取並重新載入一次。
+- 頁尾應顯示：Build V2.1 Embedded｜2026-08-06。

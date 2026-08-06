@@ -1,22 +1,16 @@
-Thailand Explorer 2026 完整版
-1. 解壓縮後可直接開 index.html 閱讀。
-2. 完整 PWA 離線安裝功能需要透過 HTTPS 網站或 localhost 開啟；直接 file:// 開啟時，行程仍可閱讀，但 service worker 無法註冊。
-3. 可部署到 GitHub Pages、Netlify 或任何靜態網站空間。
-4. Google Maps、即時營業資訊與泰文語音需要網路。
-5. 收藏與勾選狀態儲存在同一瀏覽器的 localStorage。
-
-GitHub Pages 圖片修正版：
-- 已修正 assets/ayutthaya.svg 的 XML 字元。
-- 已加入 .nojekyll。
-- 更新後若仍看到舊圖片，請用 Ctrl+F5，或清除該網站資料後重開。
-
-PNG 圖片修正版：
-- Day 1 與 Day 2 共用的 ayutthaya 視覺卡已由 SVG 改成 PNG。
-- 其他大圖也改為 PNG，避免瀏覽器 SVG 解析與舊快取問題。
-- GitHub 更新後請執行 Ctrl+F5，或清除網站資料。
-
-V2 Ultimate：
-- 保留移除每日預算與泰文常用會話的要求。
-- 新增倒數、首頁功能入口、真實景點照片、BTS 路線卡、雨天備案與拍照攻略。
-- 圖片使用 Wikimedia Commons 授權素材，詳細署名列在網站底部。
-- 更新 GitHub 後建議清除舊網站快取或 Ctrl+F5。
+{
+  "name": "Thailand Explorer 2026 Complete",
+  "short_name": "Thailand 2026",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f6f1",
+  "theme_color": "#24624a",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
