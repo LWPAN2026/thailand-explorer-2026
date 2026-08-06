@@ -1,0 +1,716 @@
+<!doctype html><html lang="zh-Hant"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#24624a"><meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="assets/icon.svg">
+<title>Thailand Explorer 2026｜完整版</title><style>
+:root{--bg:#f4f6f1;--card:#fff;--text:#20241f;--muted:#667064;--brand:#24624a;--brand2:#d9a441;--line:#dfe5dc;--shadow:0 10px 30px rgba(26,54,39,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","PingFang TC",sans-serif;line-height:1.7}
+body.dark{--bg:#111612;--card:#1b221c;--text:#eef4ef;--muted:#aab6ac;--line:#344037;--shadow:none}a{color:inherit}
+.hero{padding:28px 14px 24px;background:#173f31;color:white}.hero-inner{max-width:900px;margin:auto;position:relative}.hero-img{width:100%;aspect-ratio:16/8;object-fit:cover;border-radius:22px;display:block}
+.hero-copy{padding:20px 4px 0}.hero h1{font-size:clamp(34px,9vw,62px);line-height:1.02;margin:4px 0 12px}.hero p{margin:4px 0;opacity:.93}.pill{display:inline-block;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.15);margin:4px 4px 4px 0;font-size:14px}
+.sticky{position:sticky;top:0;z-index:20;background:rgba(244,246,241,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}body.dark .sticky{background:rgba(17,22,18,.92)}
+.nav{display:flex;gap:8px;overflow:auto;padding:10px 12px;max-width:980px;margin:auto}.nav a,.nav button{white-space:nowrap;border:0;border-radius:999px;padding:10px 13px;background:var(--card);box-shadow:0 2px 9px rgba(0,0,0,.06);text-decoration:none;color:var(--text)}
+main{max-width:880px;margin:auto;padding:18px 12px 80px}.day,.appendix{scroll-margin-top:72px;margin:20px 0 34px}.cover{display:block;width:100%;aspect-ratio:16/8;object-fit:cover;border-radius:22px;margin:0 0 12px;box-shadow:var(--shadow)}
+.day-title,.timeline,.place,.restaurant,.hotel,.driver,.notice,.appendix,.mini{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin:12px 0;box-shadow:var(--shadow)}
+.day-title h2{margin:5px 0;font-size:28px;line-height:1.25}.eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);font-weight:800}body.dark .eyebrow{color:#7bcba4}
+.summary,.small,.names{color:var(--muted)}h2{line-height:1.2}h3{margin:3px 0 6px;font-size:21px}.names{font-size:14px;margin:0 0 10px}ul,ol{padding-left:22px}.timeline li{padding:4px 0}
+.btn{display:block;text-align:center;text-decoration:none;padding:13px 15px;margin-top:12px;border-radius:14px;font-weight:800}.map{background:var(--brand);color:#fff}.route{background:#e4b44d;color:#261f11}.copy{width:100%;padding:12px;border:0;border-radius:13px;background:#e9eee9;font-weight:800;color:#283229}body.dark .copy{background:#334039;color:#fff}
+.tip{background:#f3ead8;border-radius:12px;padding:11px 12px}body.dark .tip{background:#3b3223}.driver pre,details pre{white-space:pre-wrap;background:#111b15;color:#e8f5eb;padding:14px;border-radius:14px;font-family:system-ui,sans-serif;line-height:1.65}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:10px 0;padding:12px 14px}summary{font-weight:800;cursor:pointer}
+.grid{display:grid;grid-template-columns:1fr;gap:12px}.grid .mini{margin:0}.check label{display:block;padding:8px 0;border-bottom:1px dashed var(--line)}.check input{transform:scale(1.2);margin-right:9px}
+.fav-card{position:relative}.heart{position:absolute;right:13px;top:13px;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:#c33;font-size:25px;z-index:2}.heart.active{background:#ffe5e9;color:#c5163c}
+.budget-grid{display:grid;gap:10px}.budget{border:1px solid var(--line);border-radius:15px;padding:13px;display:grid;grid-template-columns:1fr auto;gap:4px;background:var(--bg)}.budget span{font-weight:800;color:var(--brand)}.budget small{grid-column:1/3;color:var(--muted)}
+.phrase-list{display:grid;gap:9px}.phrase-list button{border:1px solid var(--line);background:var(--bg);color:var(--text);padding:13px;border-radius:14px;text-align:left;display:flex;justify-content:space-between;gap:10px}.phrase-list span{font-family:Tahoma,sans-serif;color:var(--brand)}
+.em-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.em-grid a{text-decoration:none;border:1px solid var(--line);border-radius:15px;padding:13px;background:var(--bg)}.em-grid b{display:block;font-size:24px;color:#b62525}.em-grid span{font-size:13px;color:var(--muted)}
+#favList .fav-row{border:1px solid var(--line);padding:12px;border-radius:13px;margin:8px 0;background:var(--bg)}
+footer{text-align:center;color:var(--muted);padding:30px}
+@media(min-width:700px){.grid.two{grid-template-columns:1fr 1fr}.grid.three{grid-template-columns:repeat(3,1fr)}.budget-grid{grid-template-columns:1fr 1fr}.hero{padding-top:34px}.hero-img{aspect-ratio:16/6}}
+@media(max-width:420px){.em-grid{grid-template-columns:1fr}.day-title h2{font-size:25px}}
+</style></head><body>
+<header class="hero"><div class="hero-inner"><img class="hero-img" src="assets/hero.svg" alt="Thailand Explorer">
+<div class="hero-copy"><span class="pill">2026/09/18–09/24</span><span class="pill">7天6夜</span><span class="pill">完整版</span>
+<h1>Thailand<br>Explorer 2026</h1><p>曼谷機場 → 大城 → 羅勇本島 → 曼谷</p>
+<p>9/18 12:00 抵達｜9/24 17:50 起飛</p></div></div></header>
+
+<div class="sticky"><nav class="nav">
+<a href="#day1">9/18</a><a href="#day2">9/19</a><a href="#day3">9/20</a><a href="#day4">9/21</a><a href="#day5">9/22</a><a href="#day6">9/23</a><a href="#day7">9/24</a>
+<a href="#favorites">收藏</a><a href="#weather">天氣</a><a href="#budget">預算</a><a href="#shopping">購物</a><a href="#food">美食</a><a href="#phrases">泰文</a><a href="#emergency">緊急</a><a href="#packing">行李</a>
+<button onclick="toggleDark()">深色模式</button>
+</nav></div>
+<main>
+<section class="notice"><strong>本版已補齊：</strong>大圖卡片、收藏、PWA 離線、深色模式、Google Maps、BTS／MRT、包車泰文、天氣穿搭、每日預算、購物、美食、泰文會話、每日清單、緊急電話與行李清單。</section>
+
+<section class="notice"><strong>使用方式：</strong>點每張卡片的 Google Maps 按鈕即可開啟地圖；「開啟今日導航」會帶入當日順序。曼谷不排寺廟、不安排按摩，並以 BTS／MRT 為主。9/18–9/21 包車，9/24 單獨送機。</section>
+
+<section class="day" id="day1"><img class="cover" src="assets/ayutthaya.svg" alt="day1 visual card" loading="lazy">
+<div class="day-title"><span class="eyebrow">Day 1｜9/18（五）｜包車</span><h2>素萬那普機場 → 大城古城</h2><p class="summary">12:00 抵達後直接前往大城。第一天只保留兩個核心古蹟，避免入境或塞車造成壓力。</p></div>
+<a class="btn route" href="https://www.google.com/maps/dir/?api=1&origin=Suvarnabhumi+Airport&destination=sala+ayutthaya&waypoints=Wat+Mahathat+Ayutthaya%7CWat+Chaiwatthanaram" target="_blank" rel="noopener">開啟今日導航｜機場到大城</a>
+<div class="timeline"><h3>建議時間</h3><ol><li>12:00 抵達素萬那普機場</li><li>13:15–13:45 完成入境、領行李並與司機會合</li><li>15:15 左右抵達大城，先簡單用餐或買點心</li><li>15:45–16:45 瑪哈泰寺</li><li>17:00–18:15 柴瓦塔那蘭寺</li><li>18:45 河景晚餐，之後入住</li></ol></div>
+
+    <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <div class="place-head">
+        <div><span class="eyebrow">45–60 分鐘｜大城代表古蹟</span><h3>瑪哈泰寺</h3><p class="names">Wat Mahathat<br><span lang="th">วัดมหาธาตุ</span></p></div>
+      </div>
+      <p>瑪哈泰寺曾是大城王朝的重要宗教中心，最著名的畫面是被樹根包覆的佛頭。紅磚佛塔、殘缺佛像與盤根錯節的樹木，把王朝興衰與自然回收城市的過程濃縮在同一個空間裡。大城於約 1350 年成為暹羅第二個首都，18 世紀遭摧毀，今天的遺址仍可看出昔日規模。</p>
+      <ul><li>樹根佛頭是必看重點，拍照時應蹲低，避免頭部高過佛像。</li><li>下午光線能凸顯紅磚層次，適合廣角與人像。</li><li>步道多為戶外碎石與磚地，雨天穿防滑鞋。</li></ul>
+      <p class="tip"><strong>提醒：</strong>多數核心遺址常見開放約 08:00–18:00，但實際閉園與售票時間請以當日公告為準。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Wat+Mahathat+Ayutthaya" target="_blank" rel="noopener">Google Maps｜導航</a>
+      
+    </article>
+
+    <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <div class="place-head">
+        <div><span class="eyebrow">60–75 分鐘｜傍晚攝影</span><h3>柴瓦塔那蘭寺</h3><p class="names">Wat Chaiwatthanaram<br><span lang="th">วัดไชยวัฒนาราม</span></p></div>
+      </div>
+      <p>這座河畔寺院以高棉式中央塔與環繞小塔聞名，整體軸線對稱、氣勢宏大。相較瑪哈泰寺的滄桑感，這裡更能想像大城王朝鼎盛時期的皇家規模。傍晚陽光落在紅磚塔身上，是大城最有層次的攝影時段。</p>
+      <ul><li>先從入口正面拍完整中軸，再沿外圍找佛塔框景。</li><li>不要攀爬封閉區域或觸碰古蹟。</li><li>若班機延誤，這一站優先保留，瑪哈泰寺可移至隔天。</li></ul>
+      <p class="tip"><strong>提醒：</strong>9 月容易有短暫陣雨，若雷雨強烈就縮短停留，不必硬等夕陽。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Wat+Chaiwatthanaram" target="_blank" rel="noopener">Google Maps｜導航</a>
+      
+    </article>
+<div class="grid two">
+
+    <article class="restaurant fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">餐廳推薦｜中高價</span>
+      <h3>第一晚河景晚餐</h3>
+      <p class="names">sala ayutthaya eatery and bar<br><span lang="th">ศาลา อยุธยา</span></p>
+      <p>餐廳位在昭披耶河畔，視野正對古寺，第一晚不需再移動到夜市，能以較舒服的方式結束飛行與長途移動。</p>
+      <p><strong>建議點：</strong></p><ul><li>大城烤河蝦 กุ้งแม่น้ำเผา</li><li>冬蔭功 ต้มยำกุ้ง</li><li>檸檬蒸鱸魚 ปลากะพงนึ่งมะนาว</li><li>炒時蔬或芒果糯米</li></ul>
+      <p class="tip"><strong>訂位：</strong>河景座位與週末晚餐建議先訂位；河蝦常依重量計價，點餐前確認價格。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=sala+ayutthaya" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
+    </article>
+
+    <article class="hotel fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">住宿建議</span>
+      <h3>大城住宿首選</h3>
+      <p class="names">sala ayutthaya<br><span lang="th">ศาลา อยุธยา</span></p>
+      <p>這間精品飯店適合只住一晚又重視氣氛的旅客。河景與設計感突出，晚餐後可直接休息。</p>
+      <p><strong>優點：</strong>景觀與餐廳整合、位置靠近古城、第一晚移動最少。</p>
+      <p><strong>取捨：</strong>房價較高，部分房型空間感與景觀差異大；預算有限可改住 Centara Ayutthaya 或 Krungsri River Hotel。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=sala+ayutthaya" target="_blank" rel="noopener">Google Maps｜飯店位置</a>
+    </article>
+</div>
+<div class="driver"><h3>給司機看的泰文</h3><pre id="thai1">วันที่ 18 กันยายน 2026
+รับที่สนามบินสุวรรณภูมิ เที่ยวบินถึงเวลา 12:00 น.
+เดินทางไปจังหวัดพระนครศรีอยุธยา
+แวะวัดมหาธาตุ และวัดไชยวัฒนาราม
+รับประทานอาหารเย็นที่ sala ayutthaya
+ส่งที่โรงแรม sala ayutthaya
+ขอเที่ยวแบบสบาย ๆ ไม่เร่งรีบ</pre><button class="copy" onclick="copyText('thai1',this)">複製泰文</button></div>
+</section>
+<section class="day" id="day2"><img class="cover" src="assets/ayutthaya.svg" alt="day2 visual card" loading="lazy">
+<div class="day-title"><span class="eyebrow">Day 2｜9/19（六）｜包車</span><h2>大城皇家遺址 → 羅勇老街</h2><p class="summary">上午完成大城代表景點，午餐後長途前往羅勇。傍晚老街以散步與地方菜為主，不再排大量景點。</p></div>
+<a class="btn route" href="https://www.google.com/maps/dir/?api=1&origin=sala+ayutthaya&destination=Kantary+Bay+Hotel+Rayong&waypoints=Wat+Phra+Si+Sanphet%7CWihan+Phra+Mongkhon+Bophit%7CWat+Yai+Chai+Mongkhon" target="_blank" rel="noopener">開啟今日導航｜大城到羅勇</a>
+<div class="timeline"><h3>建議時間</h3><ol><li>08:30 退房出發</li><li>09:00 帕席桑碧寺</li><li>10:00 蒙空博碧寺</li><li>10:40 柴蒙空寺</li><li>12:00 船麵午餐</li><li>13:00–13:30 出發前往羅勇，中途休息一次</li><li>17:30 左右入住；視交通與營業狀況逛 Yomjinda 老街</li></ol></div>
+
+    <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <div class="place-head">
+        <div><span class="eyebrow">45–60 分鐘｜皇家寺院</span><h3>帕席桑碧寺</h3><p class="names">Wat Phra Si Sanphet<br><span lang="th">วัดพระศรีสรรเพชญ์</span></p></div>
+      </div>
+      <p>這裡位於昔日大城王宮範圍，是王室專用寺院。三座並列的鐘形佛塔是大城最具辨識度的天際線，除了構圖整齊，也象徵王室與宗教權力的結合。</p>
+      <ul><li>由入口稍微側拍，可讓三塔產生前後層次。</li><li>早上比午後涼爽，也較少逆光。</li><li>周邊曝曬，帽子與飲水很重要。</li></ul>
+      
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Wat+Phra+Si+Sanphet" target="_blank" rel="noopener">Google Maps｜導航</a>
+      
+    </article>
+
+    <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <div class="place-head">
+        <div><span class="eyebrow">20–30 分鐘｜室內參拜</span><h3>蒙空博碧寺</h3><p class="names">Wihan Phra Mongkhon Bophit<br><span lang="th">วิหารพระมงคลบพิตร</span></p></div>
+      </div>
+      <p>這座佛殿位於帕席桑碧寺旁，供奉大型青銅坐佛。它不是純遺址，而是仍在使用的信仰空間，能從古城歷史自然銜接到當代泰國人的參拜生活。</p>
+      <ul><li>入殿前脫鞋並降低音量。</li><li>若遇大雨，這裡也是很好的室內停留點。</li></ul>
+      
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Wihan+Phra+Mongkhon+Bophit" target="_blank" rel="noopener">Google Maps｜導航</a>
+      
+    </article>
+
+    <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <div class="place-head">
+        <div><span class="eyebrow">50–60 分鐘｜佛塔與臥佛</span><h3>柴蒙空寺</h3><p class="names">Wat Yai Chai Mongkhon<br><span lang="th">วัดใหญ่ชัยมงคล</span></p></div>
+      </div>
+      <p>寺內的大佛塔、整齊佛像與戶外臥佛讓視覺變化比前兩站豐富。可登上部分階梯俯瞰寺院，但階梯陡，行動不便者在下方欣賞即可。</p>
+      <ul><li>佛塔階梯是熱門拍照點，請注意上下行人。</li><li>佛像長廊適合使用較長焦段拍出重複感。</li></ul>
+      
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Wat+Yai+Chai+Mongkhon" target="_blank" rel="noopener">Google Maps｜導航</a>
+      
+    </article>
+<div class="grid two">
+
+    <article class="restaurant fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">餐廳推薦｜平價</span>
+      <h3>大城午餐</h3>
+      <p class="names">Pa Lek Boat Noodle 或附近船麵店<br><span lang="th">ก๋วยเตี๋ยวเรืออยุธยา</span></p>
+      <p>船麵是大城最具代表性的日常食物。小碗設計源自過去河上販售，湯頭通常濃郁帶香料味，適合一次吃兩種口味。</p>
+      <p><strong>建議點：</strong></p><ul><li>豬肉船麵 ก๋วยเตี๋ยวเรือหมู</li><li>牛肉船麵 ก๋วยเตี๋ยวเรือเนื้อ</li><li>炸豬皮 แคบหมู</li><li>泰式奶茶 ชาไทย</li></ul>
+      <p class="tip"><strong>訂位：</strong>若不吃牛肉，可說「ไม่กินเนื้อวัว」。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Pa+Lek+Boat+Noodle+Ayutthaya" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
+    </article>
+
+    <article class="hotel fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">住宿建議</span>
+      <h3>羅勇連住兩晚</h3>
+      <p class="names">Kantary Bay Hotel Rayong<br><span lang="th">แคนทารี เบย์ โฮเทล ระยอง</span></p>
+      <p>飯店位於 Saeng Chan 海岸一帶，對這趟行程而言比住羅勇內陸市中心更平衡：晚上能有海邊感，前往老街與隔天自然景點也能靠包車完成。</p>
+      <p><strong>優點：</strong>房間普遍寬敞、適合連住、海岸散步方便、返回曼谷方向順。</p>
+      <p><strong>取捨：</strong>離班佩與考蘭雅仍有車程，夜間步行商圈不多；需靠包車或 Grab。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Kantary+Bay+Hotel+Rayong" target="_blank" rel="noopener">Google Maps｜飯店位置</a>
+    </article>
+</div>
+
+    <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <div class="place-head">
+        <div><span class="eyebrow">60–90 分鐘｜週末傍晚</span><h3>Yomjinda 老街</h3><p class="names">Yomjinda Road<br><span lang="th">ถนนยมจินดา</span></p></div>
+      </div>
+      <p>Yomjinda 是羅勇市區最有歷史感的街道之一，靠近羅勇河。過去水運帶動商業，沿街可見木造店屋、老招牌與社區生活。它不是高度商業化的觀光老街，平日可能安靜；週六傍晚若有步行街活動，攤販與小吃會更集中。</p>
+      <ul><li>老屋與騎樓適合傍晚散步，不需要安排半天。</li><li>可順看 Satudom House 或在老屋咖啡館休息。</li><li>市集活動可能調整，請當天請飯店或司機確認。</li></ul>
+      
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Yomjinda+Road+Rayong" target="_blank" rel="noopener">Google Maps｜導航</a>
+      
+    </article>
+
+    <article class="restaurant fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">餐廳推薦｜平價至中價</span>
+      <h3>羅勇地方菜晚餐</h3>
+      <p class="names">老街周邊地方菜餐廳／請司機推薦當日營業店家<br><span lang="th">ร้านอาหารพื้นเมืองระยอง</span></p>
+      <p>今晚重點不是再吃一桌海鮮，而是試羅勇地方味。老街店家營業狀況較彈性，可請司機依當日開店情況帶去可靠餐廳。</p>
+      <p><strong>建議點：</strong></p><ul><li>酸葉燉豬肉 หมูชะมวง：酸香、微甜、燉肉柔軟</li><li>椰香烤魚肉 แจงลอน</li><li>泰式煎蛋 ไข่เจียว</li><li>炒蔬菜與白飯</li></ul>
+      <p class="tip"><strong>訂位：</strong>若抵達太晚，直接改在飯店附近用餐，不必硬趕老街。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Yomjinda+Road+Rayong+local+restaurant" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
+    </article>
+<div class="driver"><h3>給司機看的泰文</h3><pre id="thai2">วันที่ 19 กันยายน 2026
+ออกจากโรงแรม sala ayutthaya เวลา 08:30 น.
+ไปวัดพระศรีสรรเพชญ์
+วิหารพระมงคลบพิตร
+วัดใหญ่ชัยมงคล
+รับประทานก๋วยเตี๋ยวเรือ แล้วเดินทางไประยอง
+ส่งสัมภาระที่ Kantary Bay Hotel Rayong
+ถ้าเวลาและร้านค้ายังเปิด ขอไปถนนยมจินดาช่วงเย็น</pre><button class="copy" onclick="copyText('thai2',this)">複製泰文</button></div>
+</section>
+<section class="day" id="day3"><img class="cover" src="assets/rayong.svg" alt="day3 visual card" loading="lazy">
+<div class="day-title"><span class="eyebrow">Day 3｜9/20（日）｜包車</span><h2>羅勇本島自然生態日</h2><p class="summary">不去沙美島，改以海角國家公園、漁港市場、濕地與松林海岸串成一整天。這是本次自然主題最完整的一天。</p></div>
+<a class="btn route" href="https://www.google.com/maps/dir/?api=1&origin=Kantary+Bay+Hotel+Rayong&destination=Kantary+Bay+Hotel+Rayong&waypoints=Khao+Laem+Ya+Mu+Ko+Samet+National+Park%7CBan+Phe+Fresh+Market%7CTung+Prong+Thong+Rayong%7CSuan+Son+Beach+Rayong" target="_blank" rel="noopener">開啟今日導航｜羅勇自然線</a>
+<div class="notice"><strong>重要調整：</strong>先前泛稱的「Rayong Mangrove Forest」定位不夠精確。本版改以 Google Maps 較容易定位的 <strong>Tung Prong Thong（金色紅樹林）</strong>作為生態點；但它位在羅勇較東側，會增加車程。若你不想拉車，請司機改找靠市區的 Phra Chedi Klang Nam 紅樹林步道，並刪除松林海灘或縮短停留。</div>
+<div class="timeline"><h3>推薦時間</h3><ol><li>08:30 早餐，09:00 出發</li><li>09:40–11:20 考蘭雅國家公園</li><li>11:35–12:10 班佩市場</li><li>12:15–13:30 班佩海鮮午餐</li><li>依體力二選一：近程紅樹林／遠程 Tung Prong Thong</li><li>16:15–17:30 松林海灘；若選遠程紅樹林則視時間取消</li><li>19:00 回市區晚餐</li></ol></div>
+
+    <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <div class="place-head">
+        <div><span class="eyebrow">90–110 分鐘｜海岸生態</span><h3>考蘭雅－沙美群島國家公園</h3><p class="names">Khao Laem Ya–Mu Ko Samet National Park<br><span lang="th">อุทยานแห่งชาติเขาแหลมหญ้า–หมู่เกาะเสม็ด</span></p></div>
+      </div>
+      <p>國家公園的本島區域以海角、岩岸、草坡與海岸步道為核心。它不是白沙灘型景點，而是觀察泰國灣海岸地形與遠眺沙美島的地方。對不搭船的人而言，這裡能保留海洋景觀，同時降低換船與搬行李的成本。</p>
+      <ul><li>沿著海岸步道觀察潮間帶、岩岸與海鳥。</li><li>官方旅遊資料列示外國成人門票 200 泰銖、兒童 100 泰銖；請以現場公告為準。</li><li>上午較不曬且較能避開午後陣雨。</li></ul>
+      <p class="tip"><strong>提醒：</strong>雨後木棧道與岩石濕滑；帶防曬、防蚊液、飲水和防滑鞋。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Khao+Laem+Ya+Mu+Ko+Samet+National+Park" target="_blank" rel="noopener">Google Maps｜導航</a>
+      
+    </article>
+
+    <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <div class="place-head">
+        <div><span class="eyebrow">30–45 分鐘｜漁港生活</span><h3>班佩市場與漁港</h3><p class="names">Ban Phe Fresh Market / Pier<br><span lang="th">ตลาดบ้านเพ / ท่าเรือบ้านเพ</span></p></div>
+      </div>
+      <p>班佩是羅勇重要漁業與海產交易區，也是前往沙美島的主要門戶。即使不登島，市場仍值得短停，因為能看到乾貨、魚露、魷魚、蝦米、水果與在地採買生活。</p>
+      <ul><li>乾貨適合當伴手禮，但含肉或生鮮品入境台灣前要確認規定。</li><li>市場地面可能濕滑，留意鞋子與隨身物品。</li><li>這一站以觀察與採買為主，不需要停太久。</li></ul>
+      
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Ban+Phe+Fresh+Market+Rayong" target="_blank" rel="noopener">Google Maps｜導航</a>
+      
+    </article>
+<div class="grid two">
+
+    <article class="restaurant fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">餐廳推薦｜中價</span>
+      <h3>班佩午餐首選</h3>
+      <p class="names">Phu Khao Thong Seafood 2<br><span lang="th">ภูเขาทองซีฟู้ด 2</span></p>
+      <p>位在班佩碼頭一帶，適合把市場與午餐合併。多人同行可共享幾道海鮮，不必每人各點主餐。</p>
+      <p><strong>建議點：</strong></p><ul><li>炸鱸魚淋魚露 ปลากะพงทอดน้ำปลา</li><li>烤蝦 กุ้งเผา</li><li>海鮮冬蔭功 ต้มยำทะเล</li><li>蟹肉炒飯 ข้าวผัดปู</li></ul>
+      <p class="tip"><strong>訂位：</strong>週日中午可能較多人，建議請司機先電話確認座位。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Phu+Khao+Thong+Seafood+2+Ban+Phe" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
+    </article>
+
+    <article class="restaurant fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">餐廳推薦｜中價</span>
+      <h3>晚餐首選</h3>
+      <p class="names">Laem Charoen Seafood Rayong<br><span lang="th">แหลมเจริญซีฟู้ด ระยอง</span></p>
+      <p>羅勇知名海鮮品牌的發源地，適合想吃品質相對穩定、環境舒適的一餐。若午餐已經很豐盛，晚餐就只點一魚、一蔬菜、一主食。</p>
+      <p><strong>建議點：</strong></p><ul><li>炸鱸魚淋魚露</li><li>咖哩蟹或蟹肉炒蛋</li><li>炒空心菜</li><li>白飯或蟹肉炒飯</li></ul>
+      <p class="tip"><strong>訂位：</strong>熱門時段建議預約。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Laem+Charoen+Seafood+Rayong" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
+    </article>
+</div>
+
+    <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <div class="place-head">
+        <div><span class="eyebrow">45–90 分鐘｜依車程選擇</span><h3>紅樹林二選一</h3><p class="names">Tung Prong Thong / Phra Chedi Klang Nam<br><span lang="th">ทุ่งโปรงทอง / พระเจดีย์กลางน้ำ</span></p></div>
+      </div>
+      <p>Tung Prong Thong 以金黃色紅樹林景觀與木棧道聞名，但從班佩往返會增加不少車程；較輕鬆的版本則可請司機帶往羅勇市區 Phra Chedi Klang Nam 周邊的紅樹林步道。紅樹林是海陸交界的重要育幼場，可觀察根系、招潮蟹、水鳥與潮汐環境。</p>
+      <ul><li>重視景觀照片且不介意拉車：選 Tung Prong Thong。</li><li>重視行程舒服：選市區紅樹林，保留松林海灘。</li><li>蚊蟲較多，避免只穿拖鞋並補防蚊液。</li></ul>
+      <p class="tip"><strong>提醒：</strong>當天應讓司機依天氣、潮汐與步道開放狀況做最後確認。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Tung+Prong+Thong+Rayong" target="_blank" rel="noopener">Google Maps｜導航</a>
+      
+    </article>
+
+    <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <div class="place-head">
+        <div><span class="eyebrow">60–75 分鐘｜海岸收尾</span><h3>松林海灘</h3><p class="names">Suan Son Beach<br><span lang="th">หาดสวนสน</span></p></div>
+      </div>
+      <p>松林海灘的特色不是精緻度假設施，而是沿海道路、樹蔭與在地休閒感。下午安排在這裡的目的，是讓行程由『看景點』切換成『坐著吹風』，不必再追逐拍照點。</p>
+      <ul><li>買椰子水或簡單點心，在松樹下休息。</li><li>9 月海況不穩，不建議在無救生員區域下水。</li><li>如選遠程 Tung Prong Thong，這站可取消，避免趕路。</li></ul>
+      
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Suan+Son+Beach+Rayong" target="_blank" rel="noopener">Google Maps｜導航</a>
+      
+    </article>
+<div class="driver"><h3>給司機看的泰文</h3><pre id="thai3">วันที่ 20 กันยายน 2026
+ออกจาก Kantary Bay Hotel Rayong เวลา 09:00 น.
+ไปอุทยานแห่งชาติเขาแหลมหญ้า–หมู่เกาะเสม็ด
+ตลาดบ้านเพ และรับประทานอาหารทะเล
+ช่วงบ่ายขอเลือกตามเวลา:
+1) ป่าชายเลนใกล้ตัวเมืองระยอง แล้วไปหาดสวนสน
+หรือ
+2) ทุ่งโปรงทอง และตัดหาดสวนสนถ้าเวลาไม่พอ
+ขอเที่ยวแบบสบาย ๆ เน้นธรรมชาติและไม่เร่งรีบ</pre><button class="copy" onclick="copyText('thai3',this)">複製泰文</button></div>
+</section>
+<section class="day" id="day4"><img class="cover" src="assets/bangkok.svg" alt="day4 visual card" loading="lazy">
+<div class="day-title"><span class="eyebrow">Day 4｜9/21（一）｜包車至曼谷</span><h2>羅勇慢早晨 → 曼谷河岸夜景</h2><p class="summary">上午保留飯店與海邊時間，中午回曼谷。抵達後包車結束，晚上以 BTS＋Gold Line 前往 ICONSIAM。</p></div>
+<a class="btn route" href="https://www.google.com/maps/dir/?api=1&origin=Kantary+Bay+Hotel+Rayong&destination=Eastin+Grand+Hotel+Phayathai" target="_blank" rel="noopener">開啟今日導航｜羅勇到曼谷飯店</a>
+<div class="timeline"><h3>建議時間</h3><ol><li>08:00–10:00 早餐、泳池或海邊散步</li><li>10:30 退房；不再安排遠程景點</li><li>11:00–12:00 羅勇最後午餐</li><li>12:15 出發，預留曼谷塞車</li><li>16:00–17:00 入住 Eastin Grand Hotel Phayathai，包車結束</li><li>18:00 後搭 BTS 前往 ICONSIAM</li></ol></div>
+<div class="grid two">
+
+    <article class="restaurant fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">餐廳推薦｜中價</span>
+      <h3>羅勇午餐</h3>
+      <p class="names">Tamnanpar Restaurant 或飯店附近泰菜<br><span lang="th">ร้านอาหารตำนานป่า</span></p>
+      <p>若想在離開羅勇前吃一餐有綠意與地方氛圍的泰菜，可考慮 Tamnanpar；但位置需依當日回曼谷動線評估。想最省時間，直接在飯店附近吃打拋飯或米粉湯。</p>
+      <p><strong>建議點：</strong></p><ul><li>酸葉燉豬肉 หมูชะมวง</li><li>泰式烤雞</li><li>咖哩或炒蔬菜</li><li>水果飲品</li></ul>
+      <p class="tip"><strong>訂位：</strong>不要為午餐繞太遠，曼谷下午交通才是這天最大的變數。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Tamnanpar+Restaurant+Rayong" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
+    </article>
+
+    <article class="hotel fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">住宿建議</span>
+      <h3>曼谷連住三晚</h3>
+      <p class="names">Eastin Grand Hotel Phayathai<br><span lang="th">โรงแรมอีสติน แกรนด์ พญาไท</span></p>
+      <p>飯店官方資訊顯示可直接連通 BTS Phaya Thai（N2）與 Airport Rail Link Phaya Thai（A8）。這正好符合你曼谷不包車、最後一天需前往機場的需求。</p>
+      <p><strong>優點：</strong>去 Ari、Siam、Chit Lom、Asok 都方便；回程可搭機場快線或預約送機。</p>
+      <p><strong>取捨：</strong>房價偏高；若要降低預算，可改住同樣靠 Phaya Thai 或 Ratchathewi 站的飯店。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Eastin+Grand+Hotel+Phayathai" target="_blank" rel="noopener">Google Maps｜飯店位置</a>
+    </article>
+</div>
+
+    <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <div class="place-head">
+        <div><span class="eyebrow">3 小時｜BTS＋Gold Line</span><h3>ICONSIAM 河岸商場</h3><p class="names">ICONSIAM<br><span lang="th">ไอคอนสยาม</span></p></div>
+      </div>
+      <p>第一晚不排寺廟與戶外長途步行，改以河岸商場完成晚餐、伴手禮初探與夜景。由 Phaya Thai 搭 BTS 到 Siam 轉 Silom Line，在 Krung Thon Buri 轉 Gold Line，於 Charoen Nakhon 下車即可。官方資料列出可透過 BTS、船或汽車抵達。</p>
+      <ul><li>先逛地下層 SookSiam，快速認識泰國各區小吃。</li><li>河岸平台適合看昭披耶河夜景。</li><li>回程仍以 Gold Line＋BTS 為主，避免晚間叫車塞在河岸。</li></ul>
+      
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=ICONSIAM" target="_blank" rel="noopener">Google Maps｜導航</a>
+      
+    </article>
+<div class="grid two">
+
+    <article class="restaurant fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">餐廳推薦｜中高價</span>
+      <h3>ICONSIAM 正式晚餐</h3>
+      <p class="names">Baan Ice @ ICONSIAM<br><span lang="th">บ้านไอซ์</span></p>
+      <p>主打南泰料理，香料、酸辣與海鮮風味比一般觀光泰菜更鮮明。若同行者不耐辣，點餐時要主動說少辣。</p>
+      <p><strong>建議點：</strong></p><ul><li>蟹肉咖哩</li><li>南部燉豬肉</li><li>蝦醬炒飯</li><li>蔬菜或清湯</li></ul>
+      <p class="tip"><strong>訂位：</strong>可說「เผ็ดน้อย」代表少辣。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Baan+Ice+ICONSIAM" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
+    </article>
+
+    <article class="restaurant fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">餐廳推薦｜平價至中價</span>
+      <h3>輕鬆晚餐</h3>
+      <p class="names">SookSiam<br><span lang="th">สุขสยาม</span></p>
+      <p>像室內版地方市集，適合各自挑選想吃的料理，省去訂位與整桌點菜壓力。</p>
+      <p><strong>建議點：</strong></p><ul><li>船麵</li><li>烤雞與糯米飯</li><li>泰式甜點</li><li>芒果糯米</li></ul>
+      <p class="tip"><strong>訂位：</strong>座位尖峰可能較難找，先找座位再分頭買餐。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=SookSiam+ICONSIAM" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
+    </article>
+</div>
+<div class="driver"><h3>給司機看的泰文</h3><pre id="thai4">วันที่ 21 กันยายน 2026
+รับจาก Kantary Bay Hotel Rayong หลังเช็คเอาท์
+รับประทานอาหารกลางวันที่ระยอง
+เดินทางไปกรุงเทพฯ
+ส่งที่ Eastin Grand Hotel Phayathai ประมาณ 16:00–17:00 น.
+วันนี้เป็นวันสุดท้ายของรถเหมาพร้อมคนขับ</pre><button class="copy" onclick="copyText('thai4',this)">複製泰文</button></div>
+</section>
+<section class="day" id="day5"><img class="cover" src="assets/bangkok.svg" alt="day5 visual card" loading="lazy">
+<div class="day-title"><span class="eyebrow">Day 5｜9/22（二）｜BTS 自由行</span><h2>Ari 生活街區 → Phrom Phong 綠地與商場</h2><p class="summary">全日依 BTS Sukhumvit Line 移動，不搭 Grab、不排寺廟。上午看曼谷生活感，下午進入商場與城市綠地，雨天也容易調整。</p></div>
+<a class="btn route" href="https://www.google.com/maps/dir/?api=1&origin=Eastin+Grand+Hotel+Phayathai&destination=Benchasiri+Park&waypoints=Ari+BTS+Station%7CNANA+Coffee+Roasters+Ari%7CLay+Lao+Ari%7CEMSPHERE" target="_blank" rel="noopener">開啟今日導航｜BTS 路線參考</a>
+<div class="timeline"><h3>捷運與時間</h3><ol><li>09:00 BTS Phaya Thai → Ari，約 2 站</li><li>09:20–11:00 Ari 巷弄與咖啡</li><li>11:30–12:45 Ari 午餐</li><li>13:15 BTS Ari → Phrom Phong，途中不必換線</li><li>14:00–17:30 EmQuartier／Emporium／Emsphere 與 Benchasiri Park</li><li>18:00 晚餐後搭 BTS 返回</li></ol></div>
+
+    <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <div class="place-head">
+        <div><span class="eyebrow">2–3 小時｜BTS Ari</span><h3>Ari 生活街區</h3><p class="names">Ari Neighborhood<br><span lang="th">ย่านอารีย์</span></p></div>
+      </div>
+      <p>Ari 以住宅巷弄、咖啡館、小餐廳與辦公生活混合聞名。它沒有單一『必看地標』，玩法是從 BTS Ari 站走進 Phahon Yothin 7 一帶，觀察街邊小店與曼谷人的日常節奏。</p>
+      <ul><li>上午先喝咖啡，再沿巷弄散步；正午前避開最熱時段。</li><li>巷內人行道不連續，過馬路要特別注意機車。</li><li>這區適合慢走，不需要一次打卡很多店。</li></ul>
+      
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Ari+BTS+Station" target="_blank" rel="noopener">Google Maps｜導航</a>
+      
+    </article>
+<div class="grid two">
+
+    <article class="restaurant fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">餐廳推薦｜中價</span>
+      <h3>Ari 咖啡</h3>
+      <p class="names">NANA Coffee Roasters Ari<br><span lang="th">นานา คอฟฟี่ โรสเตอร์ส อารีย์</span></p>
+      <p>曼谷人氣精品咖啡店，適合把它當成 Ari 的起點，而不是只匆匆外帶。</p>
+      <p><strong>建議點：</strong></p><ul><li>Dirty Coffee</li><li>手沖咖啡</li><li>拿鐵</li><li>可頌或簡單甜點</li></ul>
+      <p class="tip"><strong>訂位：</strong>熱門時段可能要候位；喝咖啡後不要再排第二家大型甜點，避免一直吃。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=NANA+Coffee+Roasters+Ari" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
+    </article>
+
+    <article class="restaurant fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">餐廳推薦｜中價</span>
+      <h3>Ari 午餐</h3>
+      <p class="names">Lay Lao Ari<br><span lang="th">เล ลาว</span></p>
+      <p>以東北泰與海岸風味料理為主，青木瓜沙拉、烤雞與辣味料理適合多人分享。</p>
+      <p><strong>建議點：</strong></p><ul><li>烤雞 ไก่ย่าง</li><li>青木瓜沙拉 ส้มตำ</li><li>辣味海鮮或魚料理</li><li>糯米飯 ข้าวเหนียว</li></ul>
+      <p class="tip"><strong>訂位：</strong>不吃辣請說「ไม่เผ็ด」；部分菜即使少辣仍有香料刺激。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Lay+Lao+Ari" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
+    </article>
+</div>
+
+    <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <div class="place-head">
+        <div><span class="eyebrow">30–50 分鐘｜BTS Phrom Phong</span><h3>Benchasiri Park</h3><p class="names">Benchasiri Park<br><span lang="th">สวนเบญจสิริ</span></p></div>
+      </div>
+      <p>位於 Phrom Phong 站旁，是商場之間很方便的城市綠地。它不是大型自然公園，但能讓整天不只待在冷氣商場，也能觀察曼谷居民運動、散步與休息。</p>
+      <ul><li>下午較不曬時再進公園。</li><li>若下雨，直接略過並留在 EmQuartier、Emporium 或 Emsphere。</li></ul>
+      
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Benchasiri+Park" target="_blank" rel="noopener">Google Maps｜導航</a>
+      
+    </article>
+
+    <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <div class="place-head">
+        <div><span class="eyebrow">2–3 小時｜BTS Phrom Phong</span><h3>The Em District</h3><p class="names">EmQuartier / Emporium / Emsphere<br><span lang="th">เอ็มควอเทียร์ / เอ็มโพเรียม / เอ็มสเฟียร์</span></p></div>
+      </div>
+      <p>三座商場透過 BTS 與步行系統串聯，餐飲、泰國設計品牌、超市與室內休息空間都完整。這區比 Siam 緊湊，適合午後與雨天。</p>
+      <ul><li>EmQuartier 有較成熟的百貨與餐飲選擇。</li><li>Emsphere 氣氛較新、餐飲與娛樂較集中。</li><li>需要買日用品可順看 Gourmet Market。</li></ul>
+      
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Emsphere+Bangkok" target="_blank" rel="noopener">Google Maps｜導航</a>
+      
+    </article>
+<div class="grid two">
+
+    <article class="restaurant fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">餐廳推薦｜中價</span>
+      <h3>Phrom Phong 晚餐</h3>
+      <p class="names">Kub Kao' Kub Pla @ EmQuartier<br><span lang="th">กับข้าวกับปลา</span></p>
+      <p>菜色選擇廣，從泰式家常菜、海鮮到甜點都有，對多人或口味不同的同行者較友善。</p>
+      <p><strong>建議點：</strong></p><ul><li>打拋或炒飯</li><li>泰式咖哩</li><li>檸檬魚</li><li>甜點</li></ul>
+      <p class="tip"><strong>訂位：</strong>分店與樓層可能調整，抵達後以商場指南為準。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Kub+Kao+Kub+Pla+EmQuartier" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
+    </article>
+
+    <article class="restaurant fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">餐廳推薦｜平價至中價</span>
+      <h3>替代晚餐</h3>
+      <p class="names">Ros'niyom<br><span lang="th">รสนิยม</span></p>
+      <p>適合想快速吃一餐又保留泰國味的人，菜單較容易理解，份量適中。</p>
+      <p><strong>建議點：</strong></p><ul><li>泰式米粉湯</li><li>打拋飯</li><li>炒河粉</li><li>泰式奶茶</li></ul>
+      
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Rosniyom+Emquartier" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
+    </article>
+</div>
+</section>
+<section class="day" id="day6"><img class="cover" src="assets/bangkok.svg" alt="day6 visual card" loading="lazy">
+<div class="day-title"><span class="eyebrow">Day 6｜9/23（三）｜BTS＋MRT</span><h2>Siam 購物 → CentralWorld／Big C → Asok 晚餐</h2><p class="summary">最後一個完整日以採買為主。上午 Siam、下午 Chit Lom／Ratchaprasong，傍晚若體力足夠再去 Asok；不想移動可直接留在 CentralWorld 吃晚餐。</p></div>
+<a class="btn route" href="https://www.google.com/maps/dir/?api=1&origin=Eastin+Grand+Hotel+Phayathai&destination=Terminal+21+Asok&waypoints=Siam+Paragon%7CSiam+Square%7CCentralWorld%7CBig+C+Supercenter+Ratchadamri" target="_blank" rel="noopener">開啟今日導航｜曼谷購物線</a>
+<div class="timeline"><h3>捷運與時間</h3><ol><li>09:30 BTS Phaya Thai → Siam</li><li>09:45–13:30 Siam Paragon、Siam Center、Siam Square</li><li>13:30 午餐</li><li>15:00 步行或搭一站 BTS 到 Chit Lom，逛 CentralWorld</li><li>17:00 Big C Ratchadamri 買伴手禮</li><li>18:30 二選一：CentralWorld 晚餐，或 BTS 到 Asok／MRT Sukhumvit</li></ol></div>
+
+    <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <div class="place-head">
+        <div><span class="eyebrow">3–4 小時｜BTS Siam</span><h3>Siam 商圈</h3><p class="names">Siam Paragon / Siam Center / Siam Square<br><span lang="th">สยามพารากอน / สยามเซ็นเตอร์ / สยามสแควร์</span></p></div>
+      </div>
+      <p>Siam 是曼谷最密集的購物與年輕文化區。Paragon 適合品牌、超市與高品質餐飲；Siam Center 偏設計與潮流；Siam Square 則是街區型小店、服飾與學生文化。</p>
+      <ul><li>先列購物清單，避免三個區域反覆走。</li><li>伴手禮可先比價，重量大的商品留到下午 Big C。</li><li>午餐尖峰人多，可提早至 11:30 或延後至 13:30。</li></ul>
+      
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Siam+Paragon" target="_blank" rel="noopener">Google Maps｜導航</a>
+      
+    </article>
+<div class="grid two">
+
+    <article class="restaurant fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">餐廳推薦｜平價至中價</span>
+      <h3>Siam 午餐首選</h3>
+      <p class="names">Inter Restaurant<br><span lang="th">อินเตอร์ เรสเตอรองท์</span></p>
+      <p>老牌泰式家常餐廳，菜單選擇多，適合希望吃道地但不想安排高價套餐的人。</p>
+      <p><strong>建議點：</strong></p><ul><li>蟹肉炒飯</li><li>打拋</li><li>冬蔭功</li><li>泰式煎蛋</li></ul>
+      <p class="tip"><strong>訂位：</strong>尖峰可能候位，店面與分店資訊以 Google Maps 當日顯示為準。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Inter+Restaurant+Siam+Square" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
+    </article>
+
+    <article class="restaurant fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">餐廳推薦｜中價</span>
+      <h3>甜點休息</h3>
+      <p class="names">After You Dessert Café<br><span lang="th">อาฟเตอร์ยู</span></p>
+      <p>招牌蜂蜜吐司份量不小，建議兩到三人分享，避免影響晚餐。</p>
+      <p><strong>建議點：</strong></p><ul><li>Shibuya Honey Toast</li><li>泰奶刨冰或季節甜點</li></ul>
+      <p class="tip"><strong>訂位：</strong>熱門時段通常需取號。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=After+You+Siam+Paragon" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
+    </article>
+</div>
+
+    <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <div class="place-head">
+        <div><span class="eyebrow">2–3 小時｜BTS Chit Lom</span><h3>CentralWorld 與 Ratchaprasong</h3><p class="names">CentralWorld<br><span lang="th">เซ็นทรัลเวิลด์</span></p></div>
+      </div>
+      <p>CentralWorld 適合集中買服飾、香氛、生活用品與伴手禮。從 Siam 可沿空中步道前往，或搭 BTS 一站到 Chit Lom。附近商場密集，下雨時幾乎可全程走室內與空橋。</p>
+      <ul><li>先逛要買的品牌，再決定是否去 Big C。</li><li>不要把所有食品都放隨身行李，先確認航空行李重量。</li></ul>
+      
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=CentralWorld+Bangkok" target="_blank" rel="noopener">Google Maps｜導航</a>
+      
+    </article>
+
+    <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <div class="place-head">
+        <div><span class="eyebrow">60–90 分鐘｜伴手禮</span><h3>Big C Ratchadamri</h3><p class="names">Big C Supercenter Ratchadamri<br><span lang="th">บิ๊กซี ราชดำริ</span></p></div>
+      </div>
+      <p>Big C 適合一次買齊零食、泡麵、調味料與日用品。它的優勢是選擇多，不代表所有商品一定最低價；看到整箱促銷前先確認行李空間。</p>
+      <ul><li>芒果乾、海苔、泡麵與調味料是常見選項。</li><li>液體、膏狀物與食品入境規定要分別確認。</li><li>結帳後就回飯店放戰利品，別再提著逛太久。</li></ul>
+      
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Big+C+Supercenter+Ratchadamri" target="_blank" rel="noopener">Google Maps｜導航</a>
+      
+    </article>
+<div class="grid two">
+
+    <article class="restaurant fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">餐廳推薦｜中高價</span>
+      <h3>最後一晚方便版</h3>
+      <p class="names">Somboon Seafood CentralWorld<br><span lang="th">สมบูรณ์โภชนา</span></p>
+      <p>招牌咖哩蟹很有名，適合作為最後一晚共享菜，但你已在羅勇吃過多餐海鮮，建議少量點招牌即可。</p>
+      <p><strong>建議點：</strong></p><ul><li>咖哩蟹 ปูผัดผงกะหรี่</li><li>炒蔬菜</li><li>蝦或魚一道</li><li>白飯</li></ul>
+      <p class="tip"><strong>訂位：</strong>只認官方分店，避免被計程車帶到名稱相近店家。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Somboon+Seafood+CentralWorld" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
+    </article>
+
+    <article class="restaurant fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">餐廳推薦｜平價</span>
+      <h3>Asok 平價版</h3>
+      <p class="names">Pier 21 Food Terminal<br><span lang="th">ศูนย์อาหารเพียร์ 21</span></p>
+      <p>Terminal 21 直接連接 BTS Asok 與 MRT Sukhumvit。Pier 21 適合用少量預算一次補吃多種泰國小吃。</p>
+      <p><strong>建議點：</strong></p><ul><li>海南雞飯</li><li>打拋飯</li><li>船麵</li><li>芒果糯米</li></ul>
+      <p class="tip"><strong>訂位：</strong>若已買很多東西，不建議再繞去 Asok，直接留 CentralWorld 用餐更輕鬆。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Pier+21+Terminal+21+Asok" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
+    </article>
+</div>
+</section>
+<section class="day" id="day7"><img class="cover" src="assets/tools.svg" alt="day7 visual card" loading="lazy">
+<div class="day-title"><span class="eyebrow">Day 7｜9/24（四）｜17:50 起飛</span><h2>Phaya Thai 輕鬆上午 → 素萬那普機場</h2><p class="summary">不再排跨區景點。中午前退房、附近吃飯，13:15–13:30 搭預約接送或 Airport Rail Link 前往機場。</p></div>
+<a class="btn route" href="https://www.google.com/maps/dir/?api=1&origin=Eastin+Grand+Hotel+Phayathai&destination=Suvarnabhumi+Airport" target="_blank" rel="noopener">開啟今日導航｜飯店到機場</a>
+<div class="timeline"><h3>建議時間</h3><ol><li>08:00–09:30 早餐</li><li>09:30–10:45 飯店附近咖啡或最後整理</li><li>11:00 退房，行李寄存</li><li>11:15–12:15 附近午餐</li><li>12:30 取行李</li><li>13:15–13:30 出發；目標 14:30–15:00 抵達機場</li><li>17:50 班機返台</li></ol></div>
+
+    <article class="place fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <div class="place-head">
+        <div><span class="eyebrow">上午 1–2 小時｜不跨區</span><h3>Phaya Thai 周邊</h3><p class="names">Phaya Thai<br><span lang="th">พญาไท</span></p></div>
+      </div>
+      <p>最後一天最重要的是準時與行李管理，而不是多塞一個景點。飯店與 BTS、Airport Rail Link 直接連通，可在周邊喝咖啡、整理退稅單據與確認托運重量。</p>
+      <ul><li>護照、行動電源、液體與退稅單分開整理。</li><li>行動電源只能隨身攜帶，不可托運。</li><li>若行李多或同行人數多，預約送機最省力；若行李輕，Airport Rail Link 最不受塞車影響。</li></ul>
+      
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Phaya+Thai+BTS+Station" target="_blank" rel="noopener">Google Maps｜導航</a>
+      
+    </article>
+<div class="grid two">
+
+    <article class="restaurant fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">餐廳推薦｜中價</span>
+      <h3>回程午餐</h3>
+      <p class="names">The Market @ Eastin Grand Hotel Phayathai 或 Phaya Thai 周邊<br><span lang="th">เดอะ มาร์เก็ต</span></p>
+      <p>最後一餐以穩定、靠近行李為優先。不要為名店跨區，也不要吃需要長時間排隊的餐廳。</p>
+      <p><strong>建議點：</strong></p><ul><li>泰式主餐</li><li>麵飯類</li><li>清爽湯品</li><li>咖啡</li></ul>
+      <p class="tip"><strong>訂位：</strong>離開餐廳前再次確認護照、手機與錢包。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Eastin+Grand+Hotel+Phayathai+restaurant" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
+    </article>
+
+    <article class="hotel fav-card"><button class="heart" aria-label="收藏" onclick="toggleFav(this)">♡</button>
+      <span class="eyebrow">住宿建議</span>
+      <h3>送機起點</h3>
+      <p class="names">Eastin Grand Hotel Phayathai<br><span lang="th">โรงแรมอีสติน แกรนด์ พญาไท</span></p>
+      <p>官方說明飯店直接連接 BTS 與 Airport Rail Link，因此即使送機車臨時有狀況，仍有鐵路備案。</p>
+      <p><strong>優點：</strong>交通備援強、行李可寄存、回機場方便。</p>
+      <p><strong>取捨：</strong>機場快線尖峰可能較擁擠；多人與大型行李仍建議預約專車。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Eastin+Grand+Hotel+Phayathai" target="_blank" rel="noopener">Google Maps｜飯店位置</a>
+    </article>
+</div>
+<div class="driver"><h3>9/24 送機泰文</h3><pre id="thai7">วันที่ 24 กันยายน 2026
+รับที่ Eastin Grand Hotel Phayathai เวลา 13:15 น.
+ไปสนามบินสุวรรณภูมิ
+เที่ยวบินออกเวลา 17:50 น.
+กรุณาเผื่อเวลารถติดและส่งที่อาคารผู้โดยสารขาออกระหว่างประเทศ</pre><button class="copy" onclick="copyText('thai7',this)">複製泰文</button></div>
+</section>
+
+<section class="appendix" id="tools">
+<h2>旅行工具與提醒</h2>
+<details open><summary>包車詢價泰文</summary>
+<pre id="quoteThai">สวัสดีค่ะ/ครับ
+ต้องการเหมารถพร้อมคนขับ 4 วัน วันที่ 18–21 กันยายน 2026
+เส้นทาง: สนามบินสุวรรณภูมิ → อยุธยา → ระยอง → กรุงเทพฯ
+วันที่ 24 กันยายน ต้องการรถรับส่งจากโรงแรมไปสนามบินสุวรรณภูมิ
+กรุณาแจ้งราคารวมค่าน้ำมัน ค่าทางด่วน ค่าที่พักคนขับ และค่าจอดรถ
+จำนวนผู้โดยสาร: ___ คน
+กระเป๋าเดินทาง: ___ ใบ</pre>
+<button class="copy" onclick="copyText('quoteThai',this)">複製詢價泰文</button>
+</details>
+<details><summary>每日隨身清單</summary>
+<div class="check"><label><input type="checkbox">護照與保險資料</label><label><input type="checkbox">行動電源與充電線</label><label><input type="checkbox">折傘／輕便雨衣</label><label><input type="checkbox">防曬與防蚊液</label><label><input type="checkbox">少量泰銖現金</label><label><input type="checkbox">飲水與好走的鞋</label></div>
+</details>
+<details><summary>雨季調整原則</summary>
+<p>9 月仍屬雨季，戶外自然景點盡量安排上午；午後若雷雨，優先取消海灘與濕滑步道，改逛市場、咖啡館或商場。不要為了完成行程而在雷雨中走海角與紅樹林。</p>
+</details>
+<details><summary>資料來源與查核日期</summary>
+<p>行程歷史背景參考 UNESCO 大城世界遺產資料；Khao Laem Ya 門票與景點資訊參考泰國觀光局；Eastin Grand Hotel Phayathai 交通資訊參考飯店官方網站；ICONSIAM 交通方式參考官方 Getting Here 頁面。資料整理日期：2026-08-06。營業時間、門票、步道與市集活動仍可能調整，出發前一週請重新查看 Google Maps 與官方公告。</p>
+</details>
+</section>
+
+
+<section class="appendix" id="favorites">
+<h2>❤️ 我的收藏</h2>
+<p class="small">點景點、餐廳或飯店卡片右上角的愛心即可收藏；資料會保存在這台裝置的瀏覽器。</p>
+<div id="favList"><p class="small">目前尚未收藏。</p></div>
+</section>
+
+<section class="appendix" id="weather">
+<img class="cover" src="assets/tools.svg" alt="Travel tools">
+<h2>9 月天氣與穿搭</h2>
+<p>泰國官方旅遊資料將 9 月視為雨季尾段，仍可能出現高溫、高濕與短時強降雨。沿海行程尤其要依雷雨與海況調整；雨通常不代表整天都下，但戶外步道應盡量排在上午。</p>
+<div class="grid two">
+<article class="mini"><h3>建議穿著</h3><ul><li>速乾短袖、薄長褲或透氣長裙。</li><li>防滑運動鞋；海邊另帶可碰水涼鞋。</li><li>薄外套，商場與車內冷氣強時使用。</li><li>帽子、太陽眼鏡及補擦型防曬。</li></ul></article>
+<article class="mini"><h3>雨季用品</h3><ul><li>折傘加輕便雨衣，強風時雨衣比傘實用。</li><li>手機防水袋、密封袋與小毛巾。</li><li>防蚊液，紅樹林與傍晚海邊特別需要。</li><li>鞋子濕後可替換的襪子。</li></ul></article>
+</div>
+<p class="tip"><strong>行程原則：</strong>雷雨時不要走海角、礁岩或紅樹林濕滑步道；改去市場、咖啡館、商場或水族館。</p>
+</section>
+
+<section class="appendix" id="budget">
+<h2>每日預算估算</h2>
+<p class="small">以下為每人泰銖估算，未含國際機票、飯店房價與 9/18–9/21 私人包車報價；餐費依共享菜色與餐廳等級浮動。</p>
+<div class="budget-grid">
+<div class="budget"><b>9/18 大城</b><span>฿1,200–2,200</span><small>門票、點心、河景晚餐</small></div>
+<div class="budget"><b>9/19 大城→羅勇</b><span>฿800–1,600</span><small>門票、船麵、地方菜</small></div>
+<div class="budget"><b>9/20 羅勇自然</b><span>฿1,100–2,000</span><small>國家公園、海鮮、飲料</small></div>
+<div class="budget"><b>9/21 羅勇→曼谷</b><span>฿900–1,800</span><small>午餐、BTS、ICONSIAM</small></div>
+<div class="budget"><b>9/22 曼谷</b><span>฿700–1,500</span><small>BTS、咖啡、午晚餐</small></div>
+<div class="budget"><b>9/23 曼谷購物</b><span>฿800–1,800＋購物</span><small>BTS、餐飲；購物另計</small></div>
+<div class="budget"><b>9/24 回程</b><span>฿500–1,200</span><small>早餐／午餐與送機分攤</small></div>
+</div>
+<details><summary>包車詢價要確認哪些費用？</summary><p>請問報價是否已含燃油、過路費、停車費、司機住宿與餐費、每天可用時數、超時費，以及 9/24 送機是否另計。車型要依乘客與行李件數決定，不能只看座位數。</p></details>
+</section>
+
+<section class="appendix" id="shopping">
+<img class="cover" src="assets/shopping.svg" alt="Shopping guide">
+<h2>Big C／7-Eleven 必買</h2>
+<div class="grid two">
+<article class="mini"><h3>7-Eleven 適合少量試吃</h3><ul>
+<li>泰式奶茶、咖啡或在地口味飲料。</li><li>烤吐司、飯糰、熱壓三明治等即食早餐。</li>
+<li>小包海苔、魷魚片、香蕉脆片與地方零食。</li><li>小包裝防曬、濕紙巾與旅行日用品。</li>
+</ul><p class="tip">乳製品、肉類與新鮮食品不要帶回台灣；現場吃完最省事。</p></article>
+<article class="mini"><h3>Big C 適合集中採買</h3><ul>
+<li>泰式泡麵、調味醬、冬蔭功或綠咖哩料理包。</li><li>芒果乾、椰子片、米果、海苔與堅果。</li>
+<li>泰國品牌香氛、肥皂與日用品。</li><li>送人用的大包裝零食與綜合包。</li>
+</ul><p class="tip">先看托運重量，再買玻璃瓶或大包液體。食品能否入境台灣，出發前以台灣官方規定為準。</p></article>
+</div>
+</section>
+
+<section class="appendix" id="food">
+<img class="cover" src="assets/food.svg" alt="Thai food guide">
+<h2>三地必吃美食</h2>
+<div class="grid three">
+<article class="mini"><h3>大城</h3><ul><li><b>烤河蝦</b>：蝦膏濃郁，常依重量計價。</li><li><b>船麵</b>：小碗濃湯，可一次吃兩種。</li><li><b>Roti Sai Mai</b>：糖絲薄餅，適合現吃。</li></ul></article>
+<article class="mini"><h3>羅勇</h3><ul><li><b>Moo Chamuang</b>：酸葉燉豬肉，地方代表菜。</li><li><b>Jaeng Lon</b>：椰香與香料魚肉烤物。</li><li><b>海鮮</b>：鱸魚、螃蟹、蝦與魷魚以共享最划算。</li></ul></article>
+<article class="mini"><h3>曼谷</h3><ul><li><b>打拋飯</b>：快速且不易踩雷。</li><li><b>青木瓜沙拉＋烤雞</b>：適合多人共享。</li><li><b>咖哩蟹</b>：最後一晚可少量點招牌。</li><li><b>芒果糯米</b>：兩人共享即可。</li></ul></article>
+</div>
+</section>
+
+<section class="appendix" id="phrases">
+<h2>泰文常用會話</h2>
+<div class="phrase-list">
+<button onclick="speakThai('สวัสดีค่ะ')"><b>你好</b><span>สวัสดีค่ะ／ครับ</span></button>
+<button onclick="speakThai('ขอบคุณค่ะ')"><b>謝謝</b><span>ขอบคุณค่ะ／ครับ</span></button>
+<button onclick="speakThai('ไม่เผ็ด')"><b>不要辣</b><span>ไม่เผ็ด</span></button>
+<button onclick="speakThai('เผ็ดน้อย')"><b>少辣</b><span>เผ็ดน้อย</span></button>
+<button onclick="speakThai('ไม่กินเนื้อวัว')"><b>不吃牛肉</b><span>ไม่กินเนื้อวัว</span></button>
+<button onclick="speakThai('แพ้อาหารทะเล')"><b>海鮮過敏</b><span>แพ้อาหารทะเล</span></button>
+<button onclick="speakThai('ราคาเท่าไหร่')"><b>多少錢？</b><span>ราคาเท่าไหร่</span></button>
+<button onclick="speakThai('ไปที่นี่ค่ะ')"><b>請去這裡</b><span>ไปที่นี่ค่ะ／ครับ</span></button>
+<button onclick="speakThai('จอดตรงนี้ได้ไหม')"><b>可以停這裡嗎？</b><span>จอดตรงนี้ได้ไหม</span></button>
+<button onclick="speakThai('ขอใบเสร็จด้วยค่ะ')"><b>請給收據</b><span>ขอใบเสร็จด้วยค่ะ／ครับ</span></button>
+</div>
+<p class="small">點選句子可嘗試用裝置的泰文語音朗讀；不同手機是否支援泰文語音取決於系統。</p>
+</section>
+
+<section class="appendix emergency" id="emergency">
+<h2>緊急聯絡資訊</h2>
+<div class="em-grid">
+<a href="tel:191"><b>191</b><span>警察／一般緊急事故</span></a>
+<a href="tel:1155"><b>1155</b><span>觀光警察，提供多語協助</span></a>
+<a href="tel:1669"><b>1669</b><span>全國緊急醫療</span></a>
+<a href="tel:199"><b>199</b><span>消防與救援</span></a>
+<a href="tel:1722"><b>1722</b><span>泰國機場資訊</span></a>
+<a href="tel:1178"><b>1178</b><span>移民局資訊</span></a>
+</div>
+<p class="tip"><strong>先做：</strong>截圖護照資料頁、保險單與緊急聯絡人，但不要把完整證件照片公開放在雲端分享連結。遇到遺失或安全事件，可先聯絡觀光警察 1155。</p>
+</section>
+
+<section class="appendix" id="packing">
+<h2>行李清單</h2>
+<div class="grid two check">
+<div><h3>證件與金錢</h3>
+<label><input type="checkbox">護照與紙本／電子備份</label><label><input type="checkbox">旅遊保險</label>
+<label><input type="checkbox">信用卡與少量泰銖</label><label><input type="checkbox">機票、飯店與包車資料</label>
+<h3>電子用品</h3><label><input type="checkbox">手機、充電線、轉接頭</label><label><input type="checkbox">行動電源（隨身，不托運）</label><label><input type="checkbox">eSIM／SIM 卡資料</label></div>
+<div><h3>雨季與戶外</h3><label><input type="checkbox">折傘與輕便雨衣</label><label><input type="checkbox">防曬、防蚊液、帽子</label><label><input type="checkbox">防滑鞋與備用襪</label><label><input type="checkbox">手機防水袋與密封袋</label>
+<h3>健康</h3><label><input type="checkbox">個人藥物與處方影本</label><label><input type="checkbox">腸胃藥、暈車藥、OK 繃</label><label><input type="checkbox">口罩與乾洗手</label></div>
+</div>
+</section>
+
+<section class="appendix" id="dailychecks">
+<h2>每日 Check List</h2>
+<div class="day-checks">
+<details><summary>9/18 出發前</summary><div class="check">
+<label><input type="checkbox">確認今日天氣與雨勢</label><label><input type="checkbox">護照／錢包／手機</label>
+<label><input type="checkbox">行動電源與飲水</label><label><input type="checkbox">今日 Google Maps 路線</label>
+<label><input type="checkbox">餐廳營業與必要訂位</label></div></details><details><summary>9/19 出發前</summary><div class="check">
+<label><input type="checkbox">確認今日天氣與雨勢</label><label><input type="checkbox">護照／錢包／手機</label>
+<label><input type="checkbox">行動電源與飲水</label><label><input type="checkbox">今日 Google Maps 路線</label>
+<label><input type="checkbox">餐廳營業與必要訂位</label></div></details><details><summary>9/20 出發前</summary><div class="check">
+<label><input type="checkbox">確認今日天氣與雨勢</label><label><input type="checkbox">護照／錢包／手機</label>
+<label><input type="checkbox">行動電源與飲水</label><label><input type="checkbox">今日 Google Maps 路線</label>
+<label><input type="checkbox">餐廳營業與必要訂位</label></div></details><details><summary>9/21 出發前</summary><div class="check">
+<label><input type="checkbox">確認今日天氣與雨勢</label><label><input type="checkbox">護照／錢包／手機</label>
+<label><input type="checkbox">行動電源與飲水</label><label><input type="checkbox">今日 Google Maps 路線</label>
+<label><input type="checkbox">餐廳營業與必要訂位</label></div></details><details><summary>9/22 出發前</summary><div class="check">
+<label><input type="checkbox">確認今日天氣與雨勢</label><label><input type="checkbox">護照／錢包／手機</label>
+<label><input type="checkbox">行動電源與飲水</label><label><input type="checkbox">今日 Google Maps 路線</label>
+<label><input type="checkbox">餐廳營業與必要訂位</label></div></details><details><summary>9/23 出發前</summary><div class="check">
+<label><input type="checkbox">確認今日天氣與雨勢</label><label><input type="checkbox">護照／錢包／手機</label>
+<label><input type="checkbox">行動電源與飲水</label><label><input type="checkbox">今日 Google Maps 路線</label>
+<label><input type="checkbox">餐廳營業與必要訂位</label></div></details><details><summary>9/24 出發前</summary><div class="check">
+<label><input type="checkbox">確認今日天氣與雨勢</label><label><input type="checkbox">護照／錢包／手機</label>
+<label><input type="checkbox">行動電源與飲水</label><label><input type="checkbox">今日 Google Maps 路線</label>
+<label><input type="checkbox">餐廳營業與必要訂位</label></div></details>
+</div></section>
+
+<section class="appendix" id="offline">
+<h2>離線閱讀與加入主畫面</h2>
+<ol><li>先在有網路時開啟一次這個網站，讓瀏覽器快取檔案。</li><li>iPhone Safari：分享 → 加入主畫面。Android Chrome：選單 → 加到主畫面／安裝應用程式。</li><li>行程、圖片、清單、收藏與泰文內容可離線開啟；Google Maps、即時營業狀況與語音朗讀仍需要網路或系統支援。</li></ol>
+<button id="installBtn" class="btn route" hidden>安裝到主畫面</button>
+</section>
+</main><footer>Thailand Explorer 2026 Complete · 資料整理 2026-08-06</footer><script>
+function toggleDark(){document.body.classList.toggle('dark');localStorage.setItem('dark',document.body.classList.contains('dark'))}
+if(localStorage.getItem('dark')==='true')document.body.classList.add('dark');
+function copyText(id,btn){const t=document.getElementById(id).innerText;navigator.clipboard.writeText(t).then(()=>{const o=btn.innerText;btn.innerText='已複製';setTimeout(()=>btn.innerText=o,1200)})}
+document.querySelectorAll('input[type=checkbox]').forEach((el,i)=>{const key='trip-check-'+i;el.checked=localStorage.getItem(key)==='1';el.addEventListener('change',()=>localStorage.setItem(key,el.checked?'1':'0'))});
+function cardTitle(card){const h=card.querySelector('h3');return h?h.innerText.trim():'未命名收藏'}
+function getFavs(){try{return JSON.parse(localStorage.getItem('trip-favs')||'[]')}catch(e){return[]}}
+function setFavs(x){localStorage.setItem('trip-favs',JSON.stringify(x));renderFavs()}
+function toggleFav(btn){const card=btn.closest('.fav-card');const title=cardTitle(card);let favs=getFavs();if(favs.includes(title)){favs=favs.filter(x=>x!==title);btn.classList.remove('active');btn.innerText='♡'}else{favs.push(title);btn.classList.add('active');btn.innerText='♥'}setFavs(favs)}
+function syncFavButtons(){const favs=getFavs();document.querySelectorAll('.fav-card').forEach(card=>{const b=card.querySelector('.heart');if(favs.includes(cardTitle(card))){b.classList.add('active');b.innerText='♥'}})}
+function renderFavs(){const box=document.getElementById('favList');if(!box)return;const favs=getFavs();box.innerHTML=favs.length?favs.map(x=>'<div class="fav-row">❤️ '+x+'</div>').join(''):'<p class="small">目前尚未收藏。</p>'}
+function speakThai(text){if('speechSynthesis'in window){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='th-TH';speechSynthesis.speak(u)}}
+syncFavButtons();renderFavs();
+if('serviceWorker'in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js'))}
+let deferredPrompt;const ib=document.getElementById('installBtn');window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;if(ib)ib.hidden=false});
+if(ib)ib.addEventListener('click',async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;ib.hidden=true});
+</script></body></html>
