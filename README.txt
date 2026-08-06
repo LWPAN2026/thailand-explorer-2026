@@ -1,16 +1,6 @@
-{
-  "name": "Thailand Explorer 2026 Complete",
-  "short_name": "Thailand 2026",
-  "start_url": "./index.html",
-  "display": "standalone",
-  "background_color": "#f4f6f1",
-  "theme_color": "#24624a",
-  "icons": [
-    {
-      "src": "assets/icon.svg",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
-  ]
-}
+Thailand Explorer 2026 V2.1 Embedded
+- index.html：網站主頁
+- manifest.webmanifest：PWA 設定
+- service-worker.js：離線快取
+- .nojekyll：避免 GitHub Pages 使用 Jekyll 處理
+- 頁尾版本：Build V2.1 Embedded｜2026-08-06
