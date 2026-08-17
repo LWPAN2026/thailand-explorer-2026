@@ -40,6 +40,15 @@ details{background:var(--card);border:1px solid var(--line);border-radius:16px;m
 .station{display:flex;flex-direction:column;align-items:center;min-width:78px;text-align:center;font-size:11px;line-height:1.25}.station b{display:block;width:14px;height:14px;border-radius:50%;background:var(--card);border:4px solid #59a76d;margin-bottom:4px}.station.silom b{border-color:#2f8b57}.station.gold b{border-color:#d7a83f}.station.hotel b{border-color:var(--brand2);box-shadow:0 0 0 4px rgba(217,164,65,.18)}
 .rail-map-img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--line);margin-top:10px}.rail-legend{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}.rail-chip{display:inline-block;padding:5px 9px;border-radius:999px;font-size:12px;font-weight:900}.rail-chip.silom{background:#1f6b45;color:#fff}.rail-chip.sukhumvit{background:#8bcf63;color:#17321e}.rail-chip.gold{background:#e2b72f;color:#3d3100}.day-route{border-top:1px dashed var(--line);padding-top:10px;margin-top:10px}.day-route strong{color:var(--brand)}.badge{display:inline-block;border-radius:999px;background:#eef4ee;padding:4px 8px;margin:2px;font-size:12px;font-weight:800}body.dark .badge{background:#2b372f}
 </style>
+
+<style>
+.souvenir-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px}
+.souvenir-card{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:24px;padding:22px;box-shadow:0 8px 24px rgba(33,66,49,.06)}
+.souvenir-card h3{margin:8px 0 6px}.souvenir-rank{font-weight:800;color:#24704f;letter-spacing:.04em}
+.souvenir-meta{color:#777;margin:0 0 10px}.souvenir-buy{background:#f6eed8;border-radius:16px;padding:12px 14px;margin-top:12px}
+.souvenir-photo{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:18px;margin:12px 0;background:#eee}
+.souvenir-note{font-size:.94em;color:#666}
+</style>
 </head>
 <body>
 <header class="hero"><div class="wrap">
@@ -49,7 +58,7 @@ details{background:var(--card);border:1px solid var(--line);border-radius:16px;m
 <p>去程抵達 9/18 12:00｜回程起飛 9/24 17:50</p>
 </div></header>
 <div class="sticky"><nav class="nav">
-<a href="#overview">總覽</a><a href="#day1">9/18</a><a href="#day2">9/19</a><a href="#day3">9/20</a><a href="#day4">9/21</a><a href="#day5">9/22</a><a href="#day6">9/23</a><a href="#day7">9/24</a><a href="#tools">工具</a>
+<a href="#overview">總覽</a><a href="#day1">9/18</a><a href="#day2">9/19</a><a href="#day3">9/20</a><a href="#day4">9/21</a><a href="#day5">9/22</a><a href="#day6">9/23</a><a href="#day7">9/24</a><a href="#souvenirs">🎁 必買</a><a href="#exchange">💱 換匯</a><a href="#tools">工具</a>
 <button onclick="toggleDark()">深色模式</button>
 </nav></div>
 <main>
@@ -254,15 +263,7 @@ details{background:var(--card);border:1px solid var(--line);border-radius:16px;m
       <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Phu+Khao+Thong+Seafood+2+Ban+Phe" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
     </article>
 
-    <article class="restaurant">
-      <span class="eyebrow">餐廳推薦｜中價</span>
-      <h3>晚餐首選</h3>
-      <p class="names">Laem Charoen Seafood Rayong<br><span lang="th">แหลมเจริญซีฟู้ด ระยอง</span></p>
-      <p>羅勇知名海鮮品牌的發源地，適合想吃品質相對穩定、環境舒適的一餐。若午餐已經很豐盛，晚餐就只點一魚、一蔬菜、一主食。</p>
-      <p><strong>建議點：</strong></p><ul><li>炸鱸魚淋魚露</li><li>咖哩蟹或蟹肉炒蛋</li><li>炒空心菜</li><li>白飯或蟹肉炒飯</li></ul>
-      <p class="tip"><strong>訂位：</strong>熱門時段建議預約。</p>
-      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Laem+Charoen+Seafood+Rayong" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
-    </article>
+    
 </div>
 
     <article class="place">
@@ -285,6 +286,14 @@ details{background:var(--card);border:1px solid var(--line);border-radius:16px;m
       
       <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Suan+Son+Beach+Rayong" target="_blank" rel="noopener">Google Maps｜導航</a>
       
+    </article><article class="restaurant">
+      <span class="eyebrow">餐廳推薦｜中價</span>
+      <h3>晚餐首選</h3>
+      <p class="names">Laem Charoen Seafood Rayong<br><span lang="th">แหลมเจริญซีฟู้ด ระยอง</span></p>
+      <p>羅勇知名海鮮品牌的發源地，適合想吃品質相對穩定、環境舒適的一餐。若午餐已經很豐盛，晚餐就只點一魚、一蔬菜、一主食。</p>
+      <p><strong>建議點：</strong></p><ul><li>炸鱸魚淋魚露</li><li>咖哩蟹或蟹肉炒蛋</li><li>炒空心菜</li><li>白飯或蟹肉炒飯</li></ul>
+      <p class="tip"><strong>訂位：</strong>熱門時段建議預約。</p>
+      <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Laem+Charoen+Seafood+Rayong" target="_blank" rel="noopener">Google Maps｜餐廳位置</a>
     </article>
 <div class="driver"><h3>給司機看的泰文</h3><pre id="thai3">วันที่ 20 กันยายน 2026
 ออกจาก Rayong Marriott Resort & Spa เวลา 09:00 น.
@@ -310,16 +319,16 @@ details{background:var(--card);border:1px solid var(--line);border-radius:16px;m
 <li><strong>18:10–18:35｜Siam Center：</strong>與 Siam Discovery 相鄰，以泰國設計品牌與有興趣的樓層為主，不必整棟逛完；目前每日 10:00–22:00。</li>
 <li><strong>18:35–20:30｜Siam Square 文青小店：</strong>依步行順序逛 <strong>Daddy and the Muscle Academy（Soi 2） → LOFT EYES Siam Flagship（Soi 2） → TRES.（Soi 5）</strong>。Daddy、LOFT EYES 目前至 21:00；TRES. 週一目前 12:00–21:00，所以小店優先於晚餐。</li>
 <li><strong>20:30 後｜晚餐＋散步：</strong>直接留在 Siam Square 吃晚餐／甜點，再步行回 MBK → Pathumwan Princess Hotel；不為了多逛一棟百貨走回頭路。</li>
-</ol></div>
+</ol></div><article class="restaurant"><span class="eyebrow">9/21｜11:30 左右｜退房前後午餐</span><h3>羅勇最後一餐｜飯店附近吃完直接回曼谷</h3><p class="names">Rayong Marriott Resort &amp; Spa 周邊</p><p>這餐不再為名店繞去 Phe。上午留在飯店／海邊放鬆，退房前後就在住宿附近吃午餐，吃完拿行李直接往曼谷，讓下午抵達 Pathumwan Princess Hotel 的時間更穩定。</p><ul><li><strong>⭐ 首選：</strong>飯店附近海鮮／泰菜，依當天營業狀況挑選。</li><li><strong>最省事備選：</strong>C-Salt（Rayong Marriott Resort &amp; Spa 館內），完全不用額外移動。</li><li><strong>取消：</strong>Tamnanpar Restaurant 不再列入 9/21 正式行程，避免為午餐往 Phe 繞路。</li><li><strong>午餐後：</strong>取行李 → 直接出發回曼谷 → Pathumwan Princess Hotel Check-in。</li></ul><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Rayong+Marriott+Resort+and+Spa" target="_blank" rel="noopener">Google Maps｜Rayong Marriott Resort &amp; Spa</a></article><article class="place"><div class="place-head"><div><span class="eyebrow">9/21｜入住後｜MBK 3F Zone D</span><h3>⭐ OTOP &amp; Souvenir Zone｜MBK 3樓・Zone D</h3><p class="names">📍 MBK Center 3樓（3rd Floor）・Zone D<br>One Tambon One Product・地方特色商品</p></div></div><p>OTOP 從搭機日提前到今天。入住 Pathumwan Princess Hotel 後，本來就會進 MBK，所以完全不增加交通。<strong>位置：MBK 3樓 Zone D 的 Souvenir Zone。</strong>先看看泰國各地果乾、零食、織品、陶瓷與手工藝，真正喜歡、怕之後找不到的商品今天就先買。</p><ul><li><strong>今天重點：</strong>先逛、先認商品，不需要一次把所有零食掃完。</li><li><strong>適合先買：</strong>OTOP 手工藝、特色織品、地方限定商品。</li><li><strong>大量零食：</strong>仍可留到 9/24 MBK 最後補貨，避免一路提著。</li><li><strong>逛完：</strong>接原本 MBK → Siam Discovery → Siam Center → Siam Square 文青小店動線。</li></ul><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=MBK+Center+Bangkok" target="_blank" rel="noopener">Google Maps｜MBK Center</a></article>
 <div class="notice"><strong>⭐ 9/21 第一晚重點：順路逛，不走回頭路。</strong> 路線固定為 <strong>Pathumwan Princess → MBK → Siam Discovery → Siam Center → Daddy → LOFT EYES → TRES. → Siam Square 晚餐 → 步行回飯店</strong>。三間小店多在 21:00 左右關門，因此先逛店、後吃晚餐。</div>
 <div class="grid two">
-<article class="place"><span class="eyebrow">第一晚認路｜MBK・Skywalk</span><h3>飯店 → MBK → National Stadium（W1）</h3><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/MBKCenterfromSkywalk.JPG?width=1280" alt="MBK Center 與空橋" referrerpolicy="no-referrer" style="width:100%;border-radius:18px;margin:10px 0 14px;display:block" loading="lazy"><p>先把飯店、MBK 與 BTS National Stadium 的位置關係看懂。Pathumwan Princess 官方說明可由 National Stadium 站 Exit 4 進 MBK 二樓，再走到飯店二樓入口。</p><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=BTS+National+Stadium+Bangkok" target="_blank" rel="noopener">Google Maps｜National Stadium</a></article>
-<article class="place"><span class="eyebrow">19:00 後｜Siam 夜間散步</span><h3>Siam Square</h3><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Bangkok%20Siam%20square%20at%20night.jpg?width=1200" alt="Siam Square 夜間街景" referrerpolicy="no-referrer" style="width:100%;border-radius:18px;margin:10px 0 14px;display:block" loading="lazy"><p>今晚把 Siam Square 當作「曼谷第一晚」的氣氛行程：散步、吃晚餐、看街區。Siam Paragon、Siam Center 等正式購物留給隔天，不必今晚全部完成。</p><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Siam+Square+Bangkok" target="_blank" rel="noopener">Google Maps｜Siam Square</a></article>
+<article class="place"><span class="eyebrow">第一晚認路｜MBK・Skywalk</span><h3>飯店 → MBK → National Stadium（W1）</h3><p>先把飯店、MBK 與 BTS National Stadium 的位置關係看懂。Pathumwan Princess 官方說明可由 National Stadium 站 Exit 4 進 MBK 二樓，再走到飯店二樓入口。</p><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=BTS+National+Stadium+Bangkok" target="_blank" rel="noopener">Google Maps｜National Stadium</a></article>
+<article class="place"><span class="eyebrow">19:00 後｜Siam 夜間散步</span><h3>Siam Square</h3><p>今晚把 Siam Square 當作「曼谷第一晚」的氣氛行程：散步、吃晚餐、看街區。Siam Paragon、Siam Center 等正式購物留給隔天，不必今晚全部完成。</p><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Siam+Square+Bangkok" target="_blank" rel="noopener">Google Maps｜Siam Square</a></article>
 </div>
 <div class="timeline"><h3>🧭 第一晚只記這張小地圖</h3><ol><li>🏨 <strong>Pathumwan Princess Hotel</strong></li><li>↓ 飯店與商場相連</li><li>🛍️ <strong>MBK Center</strong></li><li>↓ 步行找 BTS 指標</li><li>🚆 <strong>National Stadium（W1，深綠色｜Silom Line）</strong></li><li>→ 空橋／步行往 Siam</li><li>🌃 <strong>Siam Discovery → Siam Center → Siam Square</strong></li></ol></div>
 <div class="grid two">
-<article class="restaurant"><span class="eyebrow">餐廳推薦｜中價</span><h3>羅勇午餐</h3><p class="names">Tamnanpar Restaurant 或飯店附近泰菜<br><span lang="th">ร้านอาหารตำนานป่า</span></p><p>離開羅勇前吃一餐即可，不為名店繞路；下午回曼谷的交通才是這天最大變數。</p><p><strong>建議點：</strong></p><ul><li>酸葉燉豬肉 หมูชะมวง</li><li>泰式烤雞</li><li>咖哩或炒蔬菜</li><li>水果飲品</li></ul><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Tamnanpar+Restaurant+Rayong" target="_blank" rel="noopener">Google Maps｜餐廳位置</a></article>
-<article class="hotel"><span class="eyebrow">✅ 已訂住宿｜9/21–9/24</span><h3>Pathumwan Princess Hotel</h3><p class="names">444 MBK Center, Phayathai Road, Wang Mai, Pathum Wan District, Bangkok 10330 Thailand<br><span lang="th">โรงแรมปทุมวัน ปริ๊นเซส</span></p><p>飯店與 MBK Center 相連；前往 National Stadium BTS 可由 MBK 二樓通行，Siam 亦可沿空橋步行抵達。三晚都以這裡作為曼谷交通基地。</p><ul><li><strong>房型：</strong>Deluxe Classic Twin，2 張單人床</li><li><strong>早餐：</strong>每日 2 人 CiTi BiSTRo 早餐</li><li><strong>BTS：</strong>住滿 3 晚，每人 1 張 One-Day Pass，共 2 張</li></ul><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=444+MBK+Center%2C+Phayathai+Road%2C+Wang+Mai%2C+Pathum+Wan+District%2C+Bangkok+10330+Thailand" target="_blank" rel="noopener">Google Maps｜飯店位置</a></article>
+
+<article class="hotel"><span class="eyebrow">✅ 已訂住宿｜9/21–9/24</span><h3>Pathumwan Princess Hotel</h3><p class="names">444 MBK Center, Phayathai Road, Wang Mai, Pathum Wan District, Bangkok 10330 Thailand<br><span lang="th">โรงแรมปทุมวัน ปริ๊นเซส</span></p><p>飯店與 MBK Center 相連；前往 National Stadium BTS 可由 MBK 二樓通行，Siam 亦可沿空橋步行抵達。三晚都以這裡作為曼谷交通基地。</p><ul><li><strong>房型：</strong>Deluxe Classic Twin，2 張單人床</li><li><strong>早餐：</strong>每日 2 人 CiTi BiSTRo 早餐</li><li><strong>BTS：</strong>住滿 3 晚，每人 1 張 One-Day Pass，共 2 張</li></ul><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=444+MBK+Center%2C+Phayathai+Road%2C+Wang+Mai%2C+Pathum+Wan+District%2C+Bangkok+10330+Thailand" target="_blank" rel="noopener">Google Maps｜飯店位置</a></article><article class="restaurant"><span class="eyebrow">9/21｜約 20:30｜晚餐</span><h3>Nee Orn Thaifood Art｜Siam Square Soi 5</h3><p class="names">泰式料理・逛完 TRES. 直接吃</p><p>今晚不另外搭車，也不往回繞。逛完 Siam Square Soi 5 的 TRES. 後，直接在同一區吃泰菜，再慢慢步行回 MBK／Pathumwan Princess Hotel。</p><ul><li><strong>⭐ 推薦原因：</strong>和 TRES. 同在 Siam Square Soi 5，最符合今晚一路往前逛的動線。</li><li><strong>菜色：</strong>泰式家常菜、打拋、冬蔭功、Pad Thai、Massaman、海鮮與泰式甜點等，可兩人分食。</li><li><strong>備選：</strong>當天若想吃東北泰料理，可改 Som Tam Nua。</li><li><strong>晚餐後：</strong>Siam Square → 步行回 MBK → Pathumwan Princess Hotel。</li></ul><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Nee+Orn+Thaifood+Art+Siam+Square+Soi+5+Bangkok" target="_blank" rel="noopener">Google Maps｜Nee Orn Thaifood Art</a></article>
 </div>
 <article class="place"><div class="place-head"><div><span class="eyebrow">9/21｜Siam 文青小店散步</span><h3>MBK → Siam Discovery → Siam Center → Daddy → LOFT EYES → TRES.</h3><p class="names">Siam Square Soi 2 → Soi 5<br><span lang="th">สยามสแควร์</span></p></div></div><p>這晚不另外跨區，直接把值得逛的文青／設計小店嵌進原本 MBK → Siam 的步行線。Daddy 主打 90 年代／流行文化風格的文具、配件與服飾；LOFT EYES 是 Soi 2 的選物／服飾店；TRES. 位於 Soi 5，適合最後集中看泰國品牌、配件與生活風格商品。</p><ul><li><strong>Daddy and the Muscle Academy：</strong>Siam Square Soi 2，11:00–21:00。</li><li><strong>LOFT EYES Siam Flagship：</strong>Siam Square Soi 2，11:00–21:00。</li><li><strong>TRES.：</strong>Siam Square Soi 5；週一 12:00–21:00。</li><li><strong>原則：</strong>三間都在 Siam Square，看到其他喜歡的小店再自由加，不為網紅店繞路。</li></ul><a class="btn map" href="https://www.google.com/maps/dir/?api=1&origin=MBK+Center+Bangkok&destination=TRES+Siam+Square+Soi+5&waypoints=Siam+Discovery%7CSiam+Center%7CDaddy+and+the+Muscle+Academy%7CLOFT+EYES+Siam+Flagship&travelmode=walking" target="_blank" rel="noopener">Google Maps｜9/21 文青小店步行線</a></article>
 
@@ -334,18 +343,216 @@ details{background:var(--card);border:1px solid var(--line);border-radius:16px;m
 
 <section class="day" id="day5">
 <div class="day-title"><span class="eyebrow">Day 5｜9/22（二）｜BTS＋步行</span><h2>CentralWorld → Phrom Phong・Em District → Benjakitti Forest Park</h2><p class="summary">9/21 已經完整逛過 Siam Discovery、Siam Center 與 Siam Square 文青小店，今天不再重複 Siam。上午直接去 CentralWorld，重點看 B2S、Kinokuniya、MUJI；下午搭 BTS 到 Phrom Phong，逛 EmQuartier、Another Story、Emsphere 與泰國香氛，傍晚再視天氣前往 Benjakitti Forest Park。</p></div>
-
-
+<a class="btn route" href="https://www.google.com/maps/dir/?api=1&origin=444+MBK+Center%2C+Phayathai+Road%2C+Wang+Mai%2C+Pathum+Wan+District%2C+Bangkok+10330+Thailand&destination=EMSPHERE+Bangkok&waypoints=Siam+Paragon%7CCentralWorld%7CBenjasiri+Park&travelmode=transit" target="_blank" rel="noopener">開啟今日導航｜Siam（CEN，綠色轉乘站） → Chit Lom（E1，淺綠色） → Phrom Phong（E5，淺綠色）</a>
 <div class="timeline"><h3>詳細時間表｜9/22 不重複 Siam</h3><ol>
 <li><strong>08:00–09:00｜早餐：</strong>Pathumwan Princess Hotel。</li>
 <li><strong>09:45–10:15｜前往 CentralWorld：</strong>National Stadium（W1）→ Siam 轉 Sukhumvit Line → Chit Lom（E1），再沿 Ratchaprasong Skywalk 步行前往 CentralWorld。</li>
-<li><strong>10:15–12:45｜CentralWorld：</strong>重點逛 <strong>B2S Think Space → Kinokuniya → MUJI</strong>。B2S 看文具、筆記本、藝術用品與生活設計小物；Kinokuniya 可特別找泰語學習、泰文、設計／攝影與泰國相關書籍；MUJI 順路看即可，不需要整棟商場逐層逛。</li>
+<li><strong>10:15–12:45｜CentralWorld：</strong>重點逛 <strong>B2S Think Space → Kinokuniya → MUJI</strong>。B2S 看文具、筆記本、藝術用品與生活設計小物；Kinokuniya 可特別找泰語學習、泰文、設計／攝影與泰國相關書籍；MUJI 順路看即可。</li>
 <li><strong>12:45–13:45｜午餐：</strong>直接在 CentralWorld／Ratchaprasong 一帶解決。</li>
 <li><strong>13:45–14:15｜BTS Chit Lom → Phrom Phong：</strong>搭 Sukhumvit Line 往 Kheha 方向，到 Phrom Phong（E5）下車。</li>
-<li><strong>14:15–16:15｜EmQuartier＋Another Story：</strong>EmQuartier 以有興趣的品牌為主，<strong>Another Story</strong> 列為文青／生活選物重點；Emporium 有體力再順路看。</li>
-<li><strong>16:15–18:15｜Emsphere 文青選物＋泰國香氛：</strong>先看商場 M／1F 的生活選物，再依序試 <strong>PAÑPURI → Divana → Erb</strong>；還想繼續試香再逛 <strong>JOURNAL</strong>。香氛抓 45–60 分鐘即可。</li>
-<li><strong>18:15 後｜Benjakitti Forest Park：</strong>傍晚散步；如果下雨、太熱或已經逛累就直接取消，不為了完成行程硬走。</li>
+<li><strong>14:15–16:15｜EmQuartier＋Another Story：</strong>EmQuartier 以有興趣的品牌為主，Another Story 列為文青／生活選物重點；Emporium 有體力再順路看。</li>
+<li><strong>16:15–18:15｜Emsphere 文青選物＋泰國香氛：</strong>依序試 <strong>PAÑPURI → Divana → Erb</strong>；還想繼續試香再逛 <strong>JOURNAL</strong>。香氛抓 45–60 分鐘即可。</li>
+<li><strong>18:15 後｜Benjakitti Forest Park：</strong>傍晚散步；如果下雨、太熱或已經逛累就直接取消。</li>
 <li><strong>晚上｜晚餐＋回飯店：</strong>可回 Emsphere／Phrom Phong 吃晚餐，再搭 BTS Phrom Phong → Siam → National Stadium。</li>
+</ol></div>
+<div class="notice"><strong>🚆 今天只記兩個方向：</strong>去程在 Sukhumvit Line（淺綠色）看 <strong>Kheha</strong>；回程從 Phrom Phong 看 <strong>Khu Khot</strong>。回到 Siam（CEN）後才換 Silom Line（深綠色）去 National Stadium（W1）。</div>
+
+<article class="place"><div class="place-head"><div><span class="eyebrow">10:15–13:45｜BTS Chit Lom<br>E1・淺綠色</span><h3>CentralWorld｜文具・書店・生活選物</h3><p class="names">B2S Think Space / Kinokuniya / MUJI / CentralWorld<br><span lang="th">เซ็นทรัลเวิลด์</span></p><p><strong>📍 樓層／Zone 速查：</strong>B2S Think Space 4樓・MUJI 4樓 Zone I・Kinokuniya 6樓・午餐 Nara Thai Cuisine 7樓</p><p class="names">Zone 只在能確認的位置標示；沒有可靠 Zone 資料的店家不硬填，避免到現場被錯誤資訊帶錯方向。</p></div></div><p>9/21 已逛 Siam，所以今天上午直接把時間留給 CentralWorld。不要整棟逐層逛，鎖定真正有興趣的店，逛完直接在這裡吃午餐，再搭 BTS 往 Phrom Phong。</p><ul><li><strong>⭐ B2S Think Space：</strong>文具、筆記本、藝術用品、書籍與生活設計小物，列為這一站的優先店。</li><li><strong>⭐ Kinokuniya：</strong>可以找泰語學習書、泰文書、設計／攝影以及泰國相關書籍。</li><li><strong>MUJI：</strong>順路看生活用品與文具，不需要特別拉長停留時間。</li><li><strong>Central Department Store：</strong>若想看泰國品牌、生活用品或伴手禮再順路逛。</li><li><strong>午餐：</strong>12:45 左右直接在 Nara Thai Cuisine 用餐。</li></ul><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=CentralWorld+Bangkok" target="_blank" rel="noopener">Google Maps｜CentralWorld</a></article><article class="restaurant"><span class="eyebrow">9/22｜約 12:45｜午餐</span><h3>Nara Thai Cuisine｜CentralWorld</h3><p class="names">泰國料理・CentralWorld 7樓</p><p>上午逛完 B2S、Kinokuniya、MUJI 後直接在 CentralWorld 吃，不另外移動。上午逛完後直接在 CentralWorld 7樓 用餐，不增加交通，適合兩人點幾道泰菜分食。</p><ul><li><strong>⭐ 正式推薦：</strong>Nara Thai Cuisine。</li><li><strong>備選：</strong>若 Nara 排隊太久，可改同館的 Kiew Kai Ka - CentralWorld，不必離開商場。</li><li><strong>午餐後：</strong>回 Chit Lom 搭 BTS → Phrom Phong，接 EmQuartier／Emsphere。</li></ul><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Nara+Thai+Cuisine+CentralWorld+Bangkok" target="_blank" rel="noopener">Google Maps｜Nara Thai Cuisine</a></article>
+<article class="place"><div class="place-head"><div><span class="eyebrow">下午～晚上｜BTS Phrom Phong<br>E5・淺綠色</span><h3>EmQuartier → Emsphere 文青選物＆泰國香氛 → Benjakitti</h3><p class="names">Another Story / PAÑPURI / Divana / Erb / JOURNAL / Benjakitti Forest Park<br><span lang="th">เอ็มควอเทียร์ / เอ็มสเฟียร์ / สวนเบญจกิติ</span></p></div></div><p>下午從 EmQuartier 接 Emsphere，不跨區找香氛店。PAÑPURI、Divana、Erb 集中在 M Floor；JOURNAL 在 1F，可以在原本逛商場的動線內一次完成。</p><ul><li><strong>⭐ PAÑPURI Sensorial Boutique｜M Floor：</strong>優先試，高質感泰國香氛。</li><li><strong>⭐ Divana Atelier Flagship Store &amp; Café｜M Floor：</strong>泰國 SPA／香氛品牌，香水油、護手霜、身體與居家香氛都適合看看。</li><li><strong>Erb｜M Floor：</strong>偏泰式草本、SPA、精油與身體香氛。</li><li><strong>JOURNAL｜1F：</strong>想找更有泰國記憶點的特色香氣再逛。</li><li><strong>逛法：</strong>PAÑPURI → Divana → Erb；還有興趣再下 1F JOURNAL，控制約 45–60 分鐘。</li><li><strong>Benjakitti：</strong>香氛逛完再視天氣與體力前往；下雨或逛累直接取消。</li></ul><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=EMSPHERE+Bangkok" target="_blank" rel="noopener">Google Maps｜Emsphere</a></article><article class="restaurant"><span class="eyebrow">9/22｜晚上｜晚餐</span><h3>Emsphere｜依當天狀況現場選</h3><p class="names">Benjakitti 前後都能彈性安排</p><p>這晚不鎖死單一餐廳。逛完 Emsphere 文青選物與香氛後，若天氣好先去 Benjakitti Forest Park，再回 Emsphere 吃；若下雨或已經累了，就直接在 Emsphere 晚餐。</p><ul><li><strong>⭐ 優點：</strong>不會因餐廳預約卡住 Benjakitti 的夕陽／天氣彈性。</li><li><strong>用餐區：</strong>優先看 Emsphere 館內餐飲樓層與 EM MARKET。</li><li><strong>晚餐後：</strong>Phrom Phong（E5）→ Siam → National Stadium → 飯店。</li></ul><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=EMSPHERE+Bangkok" target="_blank" rel="noopener">Google Maps｜Emsphere</a></article>
+<div class="grid two"></div>
+<p class="tip"><strong>🎫 9/22 建議：</strong>第一次搭車先用單程票最直覺；把飯店送的 2 張 One-Day Pass 留到 9/23。今天實際需要搭的核心路段只有 Siam（CEN）→ Chit Lom（E1）→ Phrom Phong（E5），以及晚上回 National Stadium（W1）。</p>
+
+
+</section>
+
+<section class="day" id="day6">
+<div class="day-title"><span class="eyebrow">Day 6｜9/23（三）｜BTS＋Gold Line</span><h2>ICONSIAM → 昭披耶河岸慢慢逛</h2><p class="summary">最後一個完整日把 ICONSIAM 獨立出來，不跟 Sukhumvit 混跑。上午晚一點出發，從 SookSiam、午餐一路逛到傍晚河景。</p></div>
+<a class="btn route" href="https://www.google.com/maps/dir/?api=1&origin=444+MBK+Center%2C+Phayathai+Road%2C+Wang+Mai%2C+Pathum+Wan+District%2C+Bangkok+10330+Thailand&destination=ICONSIAM&travelmode=transit" target="_blank" rel="noopener">開啟今日導航｜飯店 → ICONSIAM</a>
+<div class="timeline"><h3>捷運與時間｜這天其實比 9/22 更簡單</h3><ol><li>08:00–09:00 飯店早餐</li><li>10:00 從飯店走到 BTS National Stadium（W1，深綠色）。</li><li><strong>National Stadium（W1，深綠色） → Krung Thon Buri（S7，深綠色）：</strong>直接搭 Silom Line，找 <strong>Bang Wa 方向</strong>。<strong>列車會經過 Siam，但不要下車、不要換線</strong>，一直坐到 Krung Thon Buri。</li><li><strong>Krung Thon Buri（S7，深綠色） → Charoen Nakhon（G2，金色）：</strong>跟著 <strong>Gold Line</strong> 指標轉乘，找 <strong>Khlong San 方向</strong>，下一站 Charoen Nakhon 就是 ICONSIAM。</li><li>10:45–13:00 SookSiam（G樓）逛市集造景、吃泰國地方小吃與午餐；13:00 後逛 ICONSIAM 室內造景 → 6樓 Alangkarn 與大型室內瀑布 → 5／6樓河景區；傍晚到 River Park 看昭披耶河景，再吃晚餐。</li><li><strong>回飯店：</strong>Charoen Nakhon（G2，金色） → Gold Line 回 Krung Thon Buri（S7，深綠色） → 轉 Silom Line 找 <strong>National Stadium 方向</strong>，可以一路坐回 National Stadium，不需在 Siam 換車。</li></ol></div>
+<article class="place"><div class="place-head"><div><span class="eyebrow">半日至一日｜河岸商場</span><h3>ICONSIAM</h3><p class="names">ICONSIAM<br><span lang="th">ไอคอนสยาม</span></p></div></div><p>這天不是單純逛百貨，而是抓 ICONSIAM 幾個最有特色的點：先從 G 樓 SookSiam 的泰國地方市集造景開始，中午在館內吃飯；下午上 6 樓看 Alangkarn 與大型室內瀑布，再到 5／6 樓河景區，最後把 River Park 留到傍晚看昭披耶河景。</p><ul><li><strong>① SookSiam（G樓）：</strong>泰國各地小吃、市集造景與伴手禮，適合先吃小份量、多樣分享；想看泰國工藝／地方風格商品可在這裡慢慢挑。</li>
+<li><strong>文青選物順路加：</strong>HAUS NOWHERE BANGKOK 位於 ICONSIAM M Floor／1F，不需要額外交通；有興趣再進去，不另排跨區小店。</li><li><strong>② Alangkarn（6樓）：</strong>以泰國自然與稻田意象打造的餐飲空間，順路看大型室內瀑布。</li><li><strong>③ 5／6樓河景區：</strong>下午找咖啡或休息點，從較高樓層看昭披耶河。</li><li><strong>④ River Park：</strong>傍晚再到河岸，從白天一路看到夕陽與入夜，是這天最值得保留的時段。</li><li><strong>回程：</strong>仍以 Gold Line＋BTS 為主，避開晚間河岸塞車。</li></ul><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=ICONSIAM" target="_blank" rel="noopener">Google Maps｜導航</a></article>
+<div class="grid two"><article class="restaurant"><span class="eyebrow">下午逛街途中｜小吃／甜點</span><h3>SookSiam</h3><p class="names">สุขสยาม</p><p>像室內版地方市集，適合下午逛街途中少量吃船麵、烤雞、糯米飯或甜點；今天正式午餐已安排 Thip Samai，所以這裡不要再當第二頓午餐。</p><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=SookSiam+ICONSIAM" target="_blank" rel="noopener">Google Maps｜位置</a></article></div>
+<p class="tip"><strong>🎫 BTS Pass 建議：</strong>今天建議使用飯店贈送的 2 張 One-Day Pass（一人一張）。BTS 主線當天不限搭乘次數；到 Krung Thon Buri 轉 Gold Line 時，先問站務員票券是否可直接使用，若不行就另外購買 Gold Line 單程票。</p>
+
+<article class="restaurant"><span class="eyebrow">9/23｜午餐</span><h3>ICONSIAM｜午餐彈性選</h3><p class="names">不再把 Thip Samai 列為正式推薦</p><p>Thip Samai 目前查到的評分約 4.2，未達這次「高評分優先」標準，因此從正式午餐移除。午餐先保留在 ICONSIAM 館內彈性選擇，不為吃飯跨區；SookSiam 仍只當下午小吃／甜點。</p></article>
+<article class="restaurant"><span class="eyebrow">9/23｜晚餐｜高分首選</span><h3>Baan Ice Restaurant｜ICONSIAM 5F</h3><p class="names">南泰料理・河景座位・Google 評價約 4.9★／近 4,000 則</p><p>Baan Ice Restaurant 已依你 Google Maps 查到的「永久歇業」資訊完全移除。晚餐改為 Baan Ice：近期資料仍有 2026 年用餐評論，主打南泰料理，5F 並有河景戶外座位。</p><ul><li><strong>⭐ 推薦理由：</strong>高評分且評論量大，不是少量評論撐出的高分。</li><li><strong>料理：</strong>南泰咖哩、蟹肉／蟹黃炒飯、綠咖哩、黃咖哩、烤豬頸等。</li><li><strong>提醒：</strong>南泰料理部分菜色辣度較高，點餐時可詢問辣度。</li><li><strong>晚餐後：</strong>ICONSIAM → Gold Line → BTS → National Stadium → 飯店。</li></ul><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Baan+Ice+Restaurant+ICONSIAM+Bangkok" target="_blank" rel="noopener">Google Maps｜Baan Ice ICONSIAM</a></article></section>
+
+<section class="day" id="day7">
+<div class="day-title"><span class="eyebrow">Day 7｜9/24（四）｜17:50 起飛</span><h2>MBK／Siam 最後採買 → 預約車前往素萬那普機場</h2><p class="summary">最後一天只活動在飯店周邊。早餐後整理行李、退房寄存，再補買伴手禮；約 13:15 從 Pathumwan Princess 直接叫車／預約車去機場，不搭 Airport Rail Link。</p></div>
+<a class="btn route" href="https://www.google.com/maps/dir/?api=1&origin=444+MBK+Center%2C+Phayathai+Road%2C+Wang+Mai%2C+Pathum+Wan+District%2C+Bangkok+10330+Thailand&destination=Suvarnabhumi+Airport&travelmode=driving" target="_blank" rel="noopener">開啟今日導航｜Pathumwan Princess → 素萬那普機場</a>
+<div class="timeline"><h3>建議時間</h3><ol><li><strong>08:00–09:30｜早餐：</strong>Pathumwan Princess Hotel 早餐，順便確認行李。</li><li><strong>09:30–10:30｜整理／退房準備：</strong>把大件行李整理好；需要時先向飯店確認寄存。</li><li><strong>09:30–10:30｜MBK 最後補貨：</strong>只補前幾天漏買的零食、鼻通或小物；OTOP 已在 9/21 逛過，今天不再當正式行程。</li><li><strong>10:45–11:45｜早午餐／回飯店：</strong>在 MBK 簡單吃完後回 Pathumwan Princess 取行李。</li><li><strong>約 13:15｜出發前往素萬那普機場：</strong>依 17:50 班機預留曼谷車程與國際線報到時間。</li><li><strong>17:50｜返台班機。</strong></li></ol></div><article class="restaurant"><span class="eyebrow">9/24｜約 10:45｜早午餐</span><h3>Chaolay Seafood｜MBK G Floor</h3><p class="names">泰式海鮮・吃完直接回飯店拿行李</p><p>Ban Khun Mae 因評分未達目前的高分優先標準而移除。MBK 官方目前仍列 Chaolay Seafood 位於 G Floor Zone B，2026 年也仍有近期用餐評論；但不同平台評分有落差，所以網站不把它標成「高分保證」，而是標為搭機日最順路的實用選擇。</p><ul><li><strong>料理：</strong>泰式海鮮、冬蔭功、咖哩蟹、烤河蝦等。</li><li><strong>動線：</strong>MBK 用餐 → Pathumwan Princess 取行李 → 12:30–12:45 出發機場。</li><li><strong>原則：</strong>最後一天以不跨區、不延誤班機優先；若現場評價或排隊狀況不理想，可直接改 MBK 館內其他店。</li></ul><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Chaolay+Seafood+MBK+Center+Bangkok" target="_blank" rel="noopener">Google Maps｜Chaolay Seafood MBK</a></article><article class="restaurant"><span class="eyebrow">9/24｜晚餐</span><h3>不安排曼谷市區晚餐</h3><p class="names">17:50 班機・晚餐時段已在機場／飛機上</p><p>這天不再安排市區餐廳，避免為了吃飯壓縮機場報到時間。若需要補充食物，抵達機場完成手續後再依時間處理。</p></article>
+<article class="place"><div class="place-head"><div><span class="eyebrow">上午｜不跨區</span><h3>MBK／Siam 最後採買</h3><p class="names">MBK Center / Siam</p></div></div><p>飯店直接連 MBK，最後一天不需要再跑遠。把遺漏的零食、衣服或伴手禮補齊後就回飯店拿行李。</p><ul><li>不要把最後採買排到 CentralWorld 或 Asok，避免時間失控。</li><li>行動電源放隨身行李，不可托運。</li><li>最後確認護照、手機、錢包與退稅文件。</li></ul><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=MBK+Center+Bangkok" target="_blank" rel="noopener">Google Maps｜MBK</a></article>
+<div class="grid two"><article class="hotel"><span class="eyebrow">送機起點</span><h3>Pathumwan Princess Hotel</h3><p class="names">โรงแรมปทุมวัน ปริ๊นเซส</p><p>9/24 只有這一段使用預約車：Pathumwan Princess Hotel → 素萬那普機場。前面 9/21–9/23 曼谷市內皆不包車，以步行與捷運為主。</p><p><strong>提醒：</strong>如果官網方案當天提供 16:00 延遲退房，仍建議依 17:50 班機時間在約 13:15 出發，不要把延退用到最後。</p><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=444+MBK+Center%2C+Phayathai+Road%2C+Wang+Mai%2C+Pathum+Wan+District%2C+Bangkok+10330+Thailand" target="_blank" rel="noopener">Google Maps｜飯店位置</a></article></div>
+<div class="driver"><h3>9/24 送機泰文</h3><pre id="thai7">วันที่ 24 กันยายน 2026
+รับที่ Pathumwan Princess Hotel เวลาประมาณ 13:15 น.
+444 MBK Center, Phayathai Road, Wang Mai, Pathum Wan District, Bangkok 10330 Thailand
+ไปสนามบินสุวรรณภูมิ
+เที่ยวบินออกเวลา 17:50 น.
+กรุณาเผื่อเวลารถติดและส่งที่อาคารผู้โดยสารขาออกระหว่างประเทศ</pre><button class="copy" onclick="copyText('thai7',this)">複製泰文</button></div>
+</section>
+
+
+<section class="day" id="souvenirs">
+  <div class="day-head">
+    <span class="eyebrow">新增專頁｜2026 曼谷伴手禮</span>
+    <h2>🎁 伴手禮必買推薦</h2>
+    <p>以「好帶回台灣、送人實用、有泰國特色、而且能順著你原本 9/21–9/24 行程買到」為主，不另外跨區跑店。</p>
+  </div>
+
+  <article class="tip">
+    <strong>⭐ 我最推薦的購買順序：</strong>
+    9/23 ICONSIAM 先買有質感的泰國設計／手工藝 → 9/21 入住後先逛 <strong>MBK 3F Zone D OTOP &amp; Souvenir Zone</strong> 認識地方特色商品；9/24 只補漏買的零食、果乾、鼻通與小物。MBK 官方 2026 資料確認 3F Zone D 有 OTOP／Souvenir Zone。
+  </article>
+
+  <div class="souvenir-grid">
+    <article class="souvenir-card">
+      <div class="souvenir-rank">TOP 1｜最適合大量送人</div>
+      <h3>泰國零食＋果乾</h3>
+      <p class="souvenir-meta">芒果乾・凍乾榴槤・椰子捲・泰式口味 Pretz／Pocky・海苔／魷魚零食</p>
+      
+      <p>便宜、輕、容易分送，是最不容易出錯的一類。泰國官方伴手禮資料也特別推薦果乾、椰子捲、泰式零食與泰奶沖泡品。</p>
+      <div class="souvenir-buy"><strong>🛍 你最順路：</strong>9/24 MBK Souvenir Zone 補貨；9/23 ICONSIAM 看到喜歡的特色包裝也可先買。</div>
+    </article>
+
+    <article class="souvenir-card">
+      <div class="souvenir-rank">TOP 2｜最有「泰國感」</div>
+      <h3>草本鼻通／草本香膏</h3>
+      <p class="souvenir-meta">ยาดม・小巧、價格通常不高、送同事很方便</p>
+      
+      <p>泰國辨識度非常高，而且體積小。MBK 2026 官方伴手禮清單也把草本鼻通列為熱門必買。</p>
+      <div class="souvenir-buy"><strong>🛍 建議：</strong>9/24 MBK 一次買齊；不要為了特定品牌額外跨區。</div>
+    </article>
+
+    <article class="souvenir-card">
+      <div class="souvenir-rank">TOP 3｜送人最漂亮</div>
+      <h3>泰國香氛／精油／Spa 小物</h3>
+      <p class="souvenir-meta">香氛噴霧・精油・香皂・護手／身體用品</p>
+      <p>這類比一般零食更有質感，也剛好接上你 9/22 已排的泰國香氛行程。泰國官方推薦的伴手禮也包含芳香精油與草本 Wellness 產品。</p>
+      <div class="souvenir-buy"><strong>🛍 你最順路：</strong>9/22 EmQuartier／Emsphere 香氛區直接挑；看到真正喜歡的再買，不必等最後一天。</div>
+    </article>
+
+    <article class="souvenir-card">
+      <div class="souvenir-rank">TOP 4｜自己留最值得</div>
+      <h3>泰國設計師手工藝／居家選物</h3>
+      <p class="souvenir-meta">陶瓷・織品・手工包・小型居家用品</p>
+      
+      <p>如果你不想買太觀光客的東西，這類最適合。ICONCRAFT 集合不少泰國工藝與設計商品，比普通紀念品更有收藏感。</p>
+      <div class="souvenir-buy"><strong>🛍 你最順路：</strong>9/23 ICONSIAM 的 ICONCRAFT。易碎陶瓷只建議少量買，手提回台較安心。</div>
+    </article>
+
+    <article class="souvenir-card">
+      <div class="souvenir-rank">TOP 5｜便宜又有紀念性</div>
+      <h3>大象褲／泰國圖案小物</h3>
+      <p class="souvenir-meta">大象褲・小包・磁鐵・鑰匙圈・泰國圖案 T-shirt</p>
+      <p>很適合補「有來過泰國」的紀念品。MBK 官方 2026 推薦清單包含大象褲，而 3F Zone D 的 Souvenir Zone 也集中服飾、手工藝與小紀念品。</p>
+      <div class="souvenir-buy"><strong>🛍 你最順路：</strong>9/24 MBK 最後採買時處理，完全不用增加交通。</div>
+    </article>
+
+    <article class="souvenir-card">
+      <div class="souvenir-rank">TOP 6｜喜歡做菜才買</div>
+      <h3>泰式料理包／咖哩醬／泰奶</h3>
+      <p class="souvenir-meta">綠咖哩・冬蔭功・Pad Thai 調味・泰式奶茶沖泡包</p>
+      <p>重量比零食高一點，但很有泰國味。適合自己或真的會下廚的朋友；若只是大量送同事，我反而會優先選果乾與零食。</p>
+      <div class="souvenir-buy"><strong>🛍 建議：</strong>商場超市看到再買，注意液體／醬料包裝與航空行李規定。</div>
+    </article>
+  </div>
+
+  <article class="tip">
+    <strong>💡 依你的行程，我不建議另外排 Big C 掃貨。</strong>
+    你住在 MBK 相連的 Pathumwan Princess Hotel，最後一天本來就有 MBK 時段；把大量伴手禮留到 9/24 買，可以少提兩天。較精緻、怕缺貨的設計品與香氛則在 9/22–9/23 看到喜歡的就先買。
+  </article>
+
+  
+<article class="souvenir-card">
+  <div class="souvenir-rank">🛒 直接照這張買｜品牌＋參考價格＋推薦度</div>
+  <h3>2026 伴手禮掃貨速查</h3>
+  <div style="overflow-x:auto">
+  <table style="width:100%;border-collapse:collapse;min-width:640px">
+    <thead><tr><th style="text-align:left;padding:10px">推薦</th><th style="text-align:left;padding:10px">品項／品牌</th><th style="text-align:left;padding:10px">參考價</th><th style="text-align:left;padding:10px">適合送誰</th><th style="text-align:left;padding:10px">你順路在哪買</th></tr></thead>
+    <tbody>
+      <tr><td style="padding:10px">⭐⭐⭐⭐⭐</td><td style="padding:10px"><strong>Doi Kham</strong> 芒果乾／水果乾</td><td style="padding:10px">約 ฿80–150</td><td style="padding:10px">長輩、同事、自己</td><td style="padding:10px">MBK／商場食品區</td></tr>
+      <tr><td style="padding:10px">⭐⭐⭐⭐⭐</td><td style="padding:10px"><strong>Tao Kae Noi</strong> 小老闆海苔</td><td style="padding:10px">約 ฿25–60</td><td style="padding:10px">大量分送</td><td style="padding:10px">MBK／便利商店</td></tr>
+      <tr><td style="padding:10px">⭐⭐⭐⭐⭐</td><td style="padding:10px"><strong>Bento</strong> 魷魚片</td><td style="padding:10px">約 ฿20–35</td><td style="padding:10px">愛吃辣的朋友</td><td style="padding:10px">MBK／便利商店</td></tr>
+      <tr><td style="padding:10px">⭐⭐⭐⭐⭐</td><td style="padding:10px"><strong>KOH-KAE</strong> 大哥花生</td><td style="padding:10px">約 ฿40–60</td><td style="padding:10px">辦公室、朋友</td><td style="padding:10px">MBK／超市</td></tr>
+      <tr><td style="padding:10px">⭐⭐⭐⭐⭐</td><td style="padding:10px"><strong>ChaTraMue</strong> 手標泰奶</td><td style="padding:10px">約 ฿80–155</td><td style="padding:10px">喜歡泰奶的人</td><td style="padding:10px">商場／超市</td></tr>
+      <tr><td style="padding:10px">⭐⭐⭐⭐⭐</td><td style="padding:10px"><strong>Ya Dom</strong> 泰國草本鼻通</td><td style="padding:10px">依品牌／包裝</td><td style="padding:10px">同事、小禮物</td><td style="padding:10px">9/24 MBK</td></tr>
+      <tr><td style="padding:10px">⭐⭐⭐⭐</td><td style="padding:10px"><strong>Pretz／Pocky</strong> 泰國限定口味</td><td style="padding:10px">約 ฿30–50</td><td style="padding:10px">年輕朋友、分送</td><td style="padding:10px">便利商店／MBK</td></tr>
+      <tr><td style="padding:10px">⭐⭐⭐⭐</td><td style="padding:10px"><strong>MAMA</strong> 冬蔭功泡麵</td><td style="padding:10px">約 ฿6–12</td><td style="padding:10px">自己、朋友</td><td style="padding:10px">便利商店／超市</td></tr>
+      <tr><td style="padding:10px">⭐⭐⭐⭐⭐</td><td style="padding:10px"><strong>ICONCRAFT</strong> 泰國工藝／設計品</td><td style="padding:10px">依商品</td><td style="padding:10px">重要朋友、自己收藏</td><td style="padding:10px">9/23 ICONSIAM</td></tr>
+      <tr><td style="padding:10px">⭐⭐⭐⭐⭐</td><td style="padding:10px"><strong>PAÑPURI／泰國香氛</strong></td><td style="padding:10px">依品項</td><td style="padding:10px">質感送禮、自己</td><td style="padding:10px">9/22 香氛行程</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="souvenir-buy"><strong>💡 價格提醒：</strong>表內是 2026 年近期資料的參考區間，不同容量、促銷與店鋪會有差異；現場價格才是最後依據。</div>
+</article>
+<article class="tip">
+<strong>🧳 我會這樣分配：</strong>要送很多人的零食、果乾、鼻通留到 <strong>9/24 MBK</strong> 最後買；香氛在 <strong>9/22</strong> 買；真正有設計感、自己想收藏的東西留給 <strong>9/23 ICONCRAFT</strong>。這樣最不需要一路提著戰利品跑。
+</article>
+
+<article class="souvenir-card">
+  <div class="souvenir-rank">🔥 精選 TOP 10｜看到包裝就知道要拿哪個</div>
+  <h3>我最推薦買的 10 樣實際商品</h3>
+  <p>這份把「泰國特色、好帶、送人方便、2026 仍常見」放在前面；價格與包裝可能因容量、門市及促銷不同。</p>
+
+  <div class="souvenir-grid">
+    <div class="souvenir-card"><div class="souvenir-rank">🥇 TOP 1</div><h3>Doi Kham 芒果乾</h3>
+      
+      <p><strong>推薦度：</strong>⭐⭐⭐⭐⭐　<strong>送：</strong>長輩／同事／自己</p><p>最穩的泰國果乾型伴手禮之一。140g 近期零售參考約 ฿129。</p>
+      <div class="souvenir-buy"><strong>買法：</strong>9/24 MBK／附近食品區看到就可買；大量分送可選小包裝。</div></div>
+
+    <div class="souvenir-card"><div class="souvenir-rank">🥈 TOP 2</div><h3>ChaTraMue 手標泰奶</h3>
+      
+      <p><strong>推薦度：</strong>⭐⭐⭐⭐⭐　<strong>送：</strong>愛喝奶茶的人</p><p>帶回家自己泡最有「泰國旅行延續感」，也是 2026 必買清單反覆出現的經典品。</p></div>
+
+    <div class="souvenir-card"><div class="souvenir-rank">🥉 TOP 3</div><h3>KOH-KAE 大哥花生</h3>
+      
+      <p><strong>推薦度：</strong>⭐⭐⭐⭐⭐　<strong>送：</strong>辦公室／朋友</p><p>泰國國民級零嘴，多種口味，很適合多人分享或買小包分送。</p></div>
+
+    <div class="souvenir-card"><div class="souvenir-rank">TOP 4</div><h3>Tao Kae Noi 小老闆海苔</h3>
+      
+      <p><strong>推薦度：</strong>⭐⭐⭐⭐⭐　<strong>送：</strong>同事／年輕朋友</p><p>口味多、包裝輕，特別適合最後一天一次掃多包。</p></div>
+
+    <div class="souvenir-card"><div class="souvenir-rank">TOP 5</div><h3>Bento 魷魚片</h3>
+      <p><strong>推薦度：</strong>⭐⭐⭐⭐⭐　<strong>送：</strong>愛辣零食的人</p><p>泰國辨識度很高，但辣度差異大；送人前最好先看包裝口味。</p></div>
+
+    <div class="souvenir-card"><div class="souvenir-rank">TOP 6</div><h3>Poy-Sian／泰國草本鼻通</h3>
+      <p><strong>推薦度：</strong>⭐⭐⭐⭐⭐　<strong>送：</strong>同事小禮物</p><p>體積超小、泰國特色強。網站只把它當一般伴手禮列出，不把草本用品當醫療建議。</p></div>
+
+    <div class="souvenir-card"><div class="souvenir-rank">TOP 7</div><h3>泰國限定 Pocky／Pretz</h3>
+      <p><strong>推薦度：</strong>⭐⭐⭐⭐　<strong>送：</strong>大量分送</p><p>泰奶、芒果、冬蔭功等在地口味比一般版本更有旅行感。</p></div>
+
+    <div class="souvenir-card"><div class="souvenir-rank">TOP 8</div><h3>MAMA 冬蔭功泡麵</h3>
+      <p><strong>推薦度：</strong>⭐⭐⭐⭐　<strong>送：</strong>自己／朋友</p><p>便宜又很泰國，但體積比零食占空間；建議少量買特色口味。</p></div>
+
+    <div class="souvenir-card"><div class="souvenir-rank">TOP 9</div><h3>PAÑPURI 香氛小物</h3>
+      <p><strong>推薦度：</strong>⭐⭐⭐⭐⭐　<strong>送：</strong>重要朋友／自己</p><p>不是大量分送型，而是質感型伴手禮。直接配合 9/22 香氛行程買最順。</p></div>
+
+    <div class="souvenir-card"><div class="souvenir-rank">TOP 10</div><h3>ICONCRAFT 泰國設計／工藝品</h3>
+      <p><strong>推薦度：</strong>⭐⭐⭐⭐⭐　<strong>送：</strong>自己收藏／重要的人</p><p>想避開「每個觀光客都買一樣」的紀念品，9/23 ICONSIAM 逛 ICONCRAFT 時挑一件真正喜歡的最值得。</p></div>
+  </div>
+</article>
+
+<article class="tip">
+  <strong>🧳 最省力買法：</strong>TOP 9 香氛在 9/22 買、TOP 10 設計品在 9/23 買；TOP 1–8 這種零食／大量分送品，盡量集中到 9/24 MBK 再買。MBK 3F Zone D 官方目前仍設有 OTOP &amp; Souvenir Zone。
+</article>
+<p class="souvenir-note">實際品牌、包裝、價格與庫存以現場為準。</p>
+</section>
+<section class="appendix" id="tools">
+<h2>旅行工具與提醒</h2>
+<details open><summary>第一次搭曼谷捷運｜依你 9/21–9/24 行程客製</summary>
+<div class="transit-card">
+<span class="eyebrow">🚆 第一次搭曼谷捷運｜依你 9/21–9/24 行程客製</span>
+<h3>先記住：你這趟曼谷幾乎只搭 BTS，不需要研究整張 MRT 圖</h3>
+<p class="summary">依 DJB 的分類，曼谷常見軌道交通有 BTS 空鐵、MRT 地鐵與機場線；你的飯店與景點剛好集中在 BTS。<strong>看到 MRT 標誌不用跟著進站</strong>，這幾天真正會用的是 BTS Silom Line、BTS Sukhumvit Line，以及去 ICONSIAM 時的一小段 Gold Line。</p>
+<div class="notice"><strong>你只要認得 6 個站：</strong>🏨 National Stadium（W1，深綠色） → Siam（CEN，綠色轉乘站） → Chit Lom（E1，淺綠色） → Phrom Phong（E5，淺綠色）；另一條是 National Stadium（W1，深綠色） → Krung Thon Buri（S7，深綠色） → Charoen Nakhon（G2，金色，ICONSIAM）。</div>
+
+
+<div class="timeline"><h3>第一次搭 BTS：照這 5 步做就好</h3><ol>
+<li><strong>先看目的地站名</strong>，再看要搭哪一條線；不要先看整張圖。</li>
+<li><strong>進站前確認方向</strong>：月台會用「終點站名稱」表示方向。下方每天行程已直接寫好你要看哪個方向。</li>
+<li><strong>買票最簡單的方法：</strong>9/22 可直接買 Single Journey Ticket；BTS 官方售票機可選目的地、張數後以硬幣或 QR 支付。你若不想研究 Rabbit Card，這趟不用特地買。</li>
+<li><strong>閘門：</strong>一人一張票；進站、出站都照閘門感應／指示操作。你們飯店送的 One-Day Pass 也是一人一張。</li>
+<li><strong>轉線只抓 Siam：</strong>9/22 去 Phrom Phong 才需要在 Siam 從 Silom Line 轉 Sukhumvit Line；9/23 去 ICONSIAM <strong>不用在 Siam 轉車</strong>。</li>
 </ol></div>
 
 <div class="transit-map">
@@ -385,8 +592,80 @@ details{background:var(--card);border:1px solid var(--line);border-radius:16px;m
 <details><summary>資料來源與查核日期</summary>
 <p>行程歷史背景參考 UNESCO 大城世界遺產資料；Khao Laem Ya 門票與景點資訊參考泰國觀光局；Pathumwan Princess Hotel 位置與 Book with Confidence 權益參考飯店官方網站；ICONSIAM 與曼谷 BTS 交通方式依官方資訊整理。曼谷段更新日期：2026-08-17（晚間版：加入 Siam 文青小店、Another Story、Benjakitti，並修正 9/24 時序）。營業時間、門票、步道與市集活動仍可能調整，出發前一週請重新查看 Google Maps 與官方公告。</p>
 </details>
+
+
 </section>
 
+
+<section class="day" id="exchange">
+  <div class="hero-card">
+    <span class="eyebrow">💱 曼谷換匯｜依你的行程順路版</span>
+    <h2>換匯推薦點</h2>
+    <p>原則不是為了差一點點匯率特地跨區，而是配合 9/21–9/24 的 Siam、CentralWorld、MBK 動線順便換。匯率會每天變動，現場先比較「台幣 TWD → 泰銖 THB」買入價再決定。</p>
+  </div>
+
+  <article class="place">
+    <div class="place-head"><div>
+      <span class="eyebrow">🥇 最順路｜9/21 入住後</span>
+      <h3>SuperRich MBK｜2樓・Zone C</h3>
+      <p class="names">靠近 Pathumwan Princess Hotel 入口</p>
+    </div></div>
+    <p>你的曼谷住宿就在 MBK 相連的 Pathumwan Princess Hotel，因此這個點最符合「不為換匯額外跑行程」的原則。9/21 Check-in 後就能順便處理第一筆較大的換匯。</p>
+    <ul>
+      <li><strong>位置：</strong>MBK Center 2樓・Zone C，靠近 Pathumwan Princess Hotel 入口。</li>
+      <li><strong>適合：</strong>住宿期間主要換匯、臨時補泰銖。</li>
+      <li><strong>提醒：</strong>帶護照正本；匯率以當天櫃檯牌價為準。</li>
+    </ul>
+    <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=SuperRich+MBK+Bangkok" target="_blank" rel="noopener">Google Maps｜SuperRich MBK</a>
+  </article>
+
+  <article class="place">
+    <div class="place-head"><div>
+      <span class="eyebrow">🥈 匯率優先｜9/22 CentralWorld 順路</span>
+      <h3>SuperRich Thailand｜Ratchadamri 總店</h3>
+      <p class="names">45 Ratchadamri Soi 1・CentralWorld 一帶</p>
+    </div></div>
+    <p>如果當天要換的金額比較大，可以在 9/22 CentralWorld 行程時比較這一帶的牌價。這區是曼谷著名的換匯集中區，但不建議為了小額換匯特別繞路或排很久。</p>
+    <ul>
+      <li><strong>交通：</strong>BTS Chit Lom 下車後步行前往。</li>
+      <li><strong>適合：</strong>一次換較大金額、想優先看競爭力較高的牌價。</li>
+      <li><strong>策略：</strong>若與 MBK 分店只差一點點，直接選順路的即可。</li>
+    </ul>
+    <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=SuperRich+Thailand+45+Ratchadamri+Soi+1+Bangkok" target="_blank" rel="noopener">Google Maps｜SuperRich Thailand 總店</a>
+  </article>
+
+  <article class="place">
+    <div class="place-head"><div>
+      <span class="eyebrow">🥉 備用｜9/21 Siam 行程</span>
+      <h3>OH! RiCH Superrich Thailand｜Siam Paragon 4樓</h3>
+      <p class="names">Siam Paragon・BTS Siam</p>
+    </div></div>
+    <p>9/21 本來就會逛 Siam 商圈，如果當時現金不夠，又不想等回 MBK，這個點可當備用。優點是完全貼著既有逛街路線。</p>
+    <ul>
+      <li><strong>位置：</strong>Siam Paragon 4樓。</li>
+      <li><strong>交通：</strong>BTS Siam 直達。</li>
+      <li><strong>定位：</strong>方便優先，不需要特地為它改行程。</li>
+    </ul>
+    <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=OH+RiCH+Superrich+Thailand+Siam+Paragon" target="_blank" rel="noopener">Google Maps｜Siam Paragon 換匯</a>
+  </article>
+
+  <article class="place">
+    <div class="place-head"><div>
+      <span class="eyebrow">⭐ 備用高評分｜MBK 館內</span>
+      <h3>Yes Exchange MBK Center｜3樓</h3>
+      <p class="names">MBK Center 3樓</p>
+    </div></div>
+    <p>如果 SuperRich 當下排隊太久，可以直接在同一棟 MBK 比較 Yes Exchange 的 TWD 牌價，不必離開商場。是否更划算要看當天牌價，不預先認定哪一家一定最高。</p>
+    <a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Yes+Exchange+MBK+Center" target="_blank" rel="noopener">Google Maps｜Yes Exchange MBK</a>
+  </article>
+
+  <div class="tip">
+    <strong>💡 你的換匯策略：</strong>抵達泰國時只準備足夠前段交通／小額消費的泰銖 → 9/21 入住後優先在 MBK 順路換 → 9/22 若要換較大金額，再利用 CentralWorld 行程比較 Ratchadamri 一帶牌價。不要為了很小的匯差額外搭車跨區。
+  </div>
+  <div class="tip">
+    <strong>🪪 記得：</strong>換匯時帶護照正本；台幣現鈔盡量保持完整、不要有嚴重污損或筆跡。實際營業時間與匯率可能調整，出發前與當天再確認。
+  </div>
+</section>
 </main>
 <footer>Thailand Explorer 2026 · 手機離線可閱讀，Google Maps 需要網路</footer>
 <script>
